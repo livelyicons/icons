@@ -13,11 +13,13 @@ export const Eye = ({
   trigger = 'hover',
   'aria-label': ariaLabel
 }: IconProps) => {
-  const { animationProps, drawWrapperProps } = useIconAnimation(animated, motionType, trigger)
+  const { animationProps, pathAnimationProps, drawWrapperProps } = useIconAnimation(animated, motionType, trigger)
   const isDraw = motionType === 'draw'
 
-  // For draw animation, use CSS-based animation since Motion's path animation has issues
-  const drawClass = isDraw ? 'draw-animation' : ''
+  // Use CSS for hover draw (has better browser support), Motion for loop/mount/inView
+  const useCssDraw = isDraw && trigger === 'hover'
+  const useMotionDraw = isDraw && trigger !== 'hover'
+  const drawClass = useCssDraw ? 'draw-animation' : ''
 
   return (
     <motion.svg
@@ -30,22 +32,24 @@ export const Eye = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       className={`${className || ''} ${drawClass}`.trim()}
-      {...(!isDraw ? animationProps : drawWrapperProps)}
+      {...(!isDraw ? animationProps : useCssDraw ? drawWrapperProps : {})}
       role={ariaLabel ? "img" : undefined}
       aria-label={ariaLabel}
       aria-hidden={ariaLabel ? undefined : true}
     >
-      <path
+      <motion.path
         d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
         pathLength={1}
-        className={isDraw ? 'draw-path' : ''}
+        className={useCssDraw ? 'draw-path' : ''}
+        {...(useMotionDraw ? pathAnimationProps : {})}
       />
-      <circle
+      <motion.circle
         cx="12"
         cy="12"
         r="3"
         pathLength={1}
-        className={isDraw ? 'draw-path' : ''}
+        className={useCssDraw ? 'draw-path' : ''}
+        {...(useMotionDraw ? pathAnimationProps : {})}
       />
     </motion.svg>
   )
