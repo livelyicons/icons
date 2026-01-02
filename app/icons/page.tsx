@@ -107,7 +107,7 @@ export default function IconsPage() {
                     placeholder="Search icons..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="input-dark w-full pl-12"
+                    className="input-dark w-full !pl-11"
                   />
                 </div>
 
