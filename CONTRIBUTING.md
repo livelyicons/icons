@@ -149,6 +149,33 @@ When reporting bugs, please include:
 3. Expected vs actual behavior
 4. Your environment (browser, React version, etc.)
 
+## Icon Requests
+
+Want a new icon added to LivelyIcons? We use community voting to prioritize new icons!
+
+### How It Works
+
+1. **Search first** - Check [existing icon requests](../../issues?q=is%3Aissue+label%3Aicon-request) to avoid duplicates
+2. **Submit a request** - Use the [Icon Request template](../../issues/new?template=icon-request.yml)
+3. **Vote on requests** - Add a 👍 reaction to requests you'd like to see implemented
+4. **Top-voted icons get built** - We regularly review and implement the most requested icons
+
+### What Makes a Good Request
+
+- **Clear use case** - Explain how you'd use the icon
+- **Specific name** - Suggest a descriptive, kebab-case name
+- **Category** - Help us organize by selecting an appropriate category
+- **References** - Link to similar icons or visual inspiration
+
+### Request Lifecycle
+
+| Label | Meaning |
+|-------|---------|
+| `icon-request` | New request, open for voting |
+| `approved` | Will be implemented |
+| `in-progress` | Currently being designed/built |
+| `completed` | Icon has been added |
+
 ## Feature Requests
 
 We welcome feature requests! Please open an issue with:

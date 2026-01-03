@@ -1,0 +1,69 @@
+name: 🎨 Icon Request
+description: Request a new animated icon for LivelyIcons
+title: "[Icon Request]: "
+labels: ["icon-request", "community"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new icon! Community votes (👍 reactions) help us prioritize which icons to create next.
+
+  - type: input
+    id: icon-name
+    attributes:
+      label: Icon Name
+      description: What should this icon be called?
+      placeholder: e.g., "shopping-cart", "credit-card", "calendar"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which category best fits this icon?
+      options:
+        - Navigation & UI
+        - Actions & Operations
+        - Media & Communication
+        - Business & Finance
+        - Social & People
+        - Development & Tech
+        - Files & Documents
+        - Nature & Weather
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: How would you use this icon? What problem does it solve?
+      placeholder: "I'm building a checkout flow and need an animated cart icon that draws attention when items are added..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: animation-ideas
+    attributes:
+      label: Animation Ideas (Optional)
+      description: Any specific animation behaviors you'd like to see?
+      placeholder: "It would be great if the icon had a subtle bounce when triggered, or maybe a draw effect..."
+
+  - type: textarea
+    id: reference
+    attributes:
+      label: Reference (Optional)
+      description: Links to similar icons or visual references
+      placeholder: "Similar to the cart icon in Lucide: https://lucide.dev/icons/shopping-cart"
+
+  - type: checkboxes
+    id: existing-check
+    attributes:
+      label: Checklist
+      options:
+        - label: I've searched existing issues and this icon hasn't been requested
+          required: true
+        - label: I've checked the [icon library](https://livelyicons.io) and this icon doesn't exist
+          required: true
