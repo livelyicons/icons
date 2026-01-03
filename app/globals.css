@@ -9,18 +9,29 @@
   --font-display: 'Syne', sans-serif;
   --font-mono: 'Space Mono', monospace;
 
-  --color-void: #0a0a0b;
-  --color-carbon: #141416;
-  --color-graphite: #1e1e21;
-  --color-steel: #2a2a2f;
-  --color-silver: #8b8b96;
-  --color-ghost: #c4c4cc;
-  --color-bone: #f0f0f2;
+  /* Dark forest background tones */
+  --color-void: #0a0f0d;
+  --color-carbon: #111916;
+  --color-graphite: #1a2420;
+  --color-steel: #243029;
+  --color-silver: #7a8a82;
+  --color-ghost: #b8c9be;
+  --color-bone: #eef5f0;
 
-  --color-electric: #00ff88;
-  --color-electric-dim: #00cc6a;
-  --color-plasma: #00d4ff;
-  --color-ember: #ff6b35;
+  /* Nature accent colors */
+  --color-leaf: #22c55e;
+  --color-leaf-dim: #16a34a;
+  --color-leaf-bright: #4ade80;
+  --color-sage: #86efac;
+  --color-moss: #065f46;
+  --color-amber: #f59e0b;
+  --color-bark: #78716c;
+
+  /* Legacy aliases for compatibility */
+  --color-electric: var(--color-leaf);
+  --color-electric-dim: var(--color-leaf-dim);
+  --color-plasma: var(--color-sage);
+  --color-ember: var(--color-amber);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -45,7 +56,7 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-electric);
+  background-color: var(--color-leaf);
   color: var(--color-void);
 }
 
@@ -57,10 +68,16 @@ body {
 .bg-silver { background-color: var(--color-silver); }
 .bg-ghost { background-color: var(--color-ghost); }
 .bg-bone { background-color: var(--color-bone); }
-.bg-electric { background-color: var(--color-electric); }
-.bg-electric-dim { background-color: var(--color-electric-dim); }
-.bg-plasma { background-color: var(--color-plasma); }
-.bg-ember { background-color: var(--color-ember); }
+.bg-leaf { background-color: var(--color-leaf); }
+.bg-leaf-dim { background-color: var(--color-leaf-dim); }
+.bg-leaf-bright { background-color: var(--color-leaf-bright); }
+.bg-sage { background-color: var(--color-sage); }
+.bg-moss { background-color: var(--color-moss); }
+.bg-amber { background-color: var(--color-amber); }
+.bg-electric { background-color: var(--color-leaf); }
+.bg-electric-dim { background-color: var(--color-leaf-dim); }
+.bg-plasma { background-color: var(--color-sage); }
+.bg-ember { background-color: var(--color-amber); }
 
 .text-void { color: var(--color-void); }
 .text-carbon { color: var(--color-carbon); }
@@ -69,10 +86,15 @@ body {
 .text-silver { color: var(--color-silver); }
 .text-ghost { color: var(--color-ghost); }
 .text-bone { color: var(--color-bone); }
-.text-electric { color: var(--color-electric); }
-.text-electric-dim { color: var(--color-electric-dim); }
-.text-plasma { color: var(--color-plasma); }
-.text-ember { color: var(--color-ember); }
+.text-leaf { color: var(--color-leaf); }
+.text-leaf-bright { color: var(--color-leaf-bright); }
+.text-sage { color: var(--color-sage); }
+.text-moss { color: var(--color-moss); }
+.text-amber { color: var(--color-amber); }
+.text-electric { color: var(--color-leaf); }
+.text-electric-dim { color: var(--color-leaf-dim); }
+.text-plasma { color: var(--color-sage); }
+.text-ember { color: var(--color-amber); }
 
 .border-void { border-color: var(--color-void); }
 .border-carbon { border-color: var(--color-carbon); }
@@ -81,25 +103,35 @@ body {
 .border-silver { border-color: var(--color-silver); }
 .border-ghost { border-color: var(--color-ghost); }
 .border-bone { border-color: var(--color-bone); }
-.border-electric { border-color: var(--color-electric); }
-.border-plasma { border-color: var(--color-plasma); }
+.border-leaf { border-color: var(--color-leaf); }
+.border-sage { border-color: var(--color-sage); }
+.border-electric { border-color: var(--color-leaf); }
+.border-plasma { border-color: var(--color-sage); }
 
 /* Opacity variants */
-.bg-void\/80 { background-color: rgb(10 10 11 / 0.8); }
-.bg-void\/95 { background-color: rgb(10 10 11 / 0.95); }
-.bg-electric\/10 { background-color: rgb(0 255 136 / 0.1); }
-.bg-electric\/5 { background-color: rgb(0 255 136 / 0.05); }
-.bg-plasma\/10 { background-color: rgb(0 212 255 / 0.1); }
-.bg-plasma\/5 { background-color: rgb(0 212 255 / 0.05); }
-.border-electric\/50 { border-color: rgb(0 255 136 / 0.5); }
-.border-graphite\/50 { border-color: rgb(30 30 33 / 0.5); }
+.bg-void\/80 { background-color: rgb(10 15 13 / 0.8); }
+.bg-void\/95 { background-color: rgb(10 15 13 / 0.95); }
+.bg-leaf\/10 { background-color: rgb(34 197 94 / 0.1); }
+.bg-leaf\/5 { background-color: rgb(34 197 94 / 0.05); }
+.bg-sage\/10 { background-color: rgb(134 239 172 / 0.1); }
+.bg-sage\/5 { background-color: rgb(134 239 172 / 0.05); }
+.bg-electric\/10 { background-color: rgb(34 197 94 / 0.1); }
+.bg-electric\/5 { background-color: rgb(34 197 94 / 0.05); }
+.bg-plasma\/10 { background-color: rgb(134 239 172 / 0.1); }
+.bg-plasma\/5 { background-color: rgb(134 239 172 / 0.05); }
+.border-leaf\/50 { border-color: rgb(34 197 94 / 0.5); }
+.border-leaf\/30 { border-color: rgb(34 197 94 / 0.3); }
+.border-electric\/50 { border-color: rgb(34 197 94 / 0.5); }
+.border-electric\/30 { border-color: rgb(34 197 94 / 0.3); }
+.border-graphite\/50 { border-color: rgb(26 36 32 / 0.5); }
 
 /* Font families */
 .font-display { font-family: var(--font-display); }
 .font-mono { font-family: var(--font-mono); }
 
 /* Accent color */
-.accent-electric { accent-color: var(--color-electric); }
+.accent-leaf { accent-color: var(--color-leaf); }
+.accent-electric { accent-color: var(--color-leaf); }
 
 /* Layout utilities */
 .flex { display: flex; }
@@ -356,20 +388,26 @@ body {
 .group { position: relative; }
 
 /* Hover variants */
-.hover\:text-electric:hover { color: var(--color-electric); }
+.hover\:text-leaf:hover { color: var(--color-leaf); }
+.hover\:text-electric:hover { color: var(--color-leaf); }
 .hover\:text-ghost:hover { color: var(--color-ghost); }
 .hover\:text-bone:hover { color: var(--color-bone); }
 .hover\:bg-carbon:hover { background-color: var(--color-carbon); }
 .hover\:bg-graphite:hover { background-color: var(--color-graphite); }
 .hover\:bg-steel:hover { background-color: var(--color-steel); }
-.hover\:border-electric:hover { border-color: var(--color-electric); }
-.hover\:border-electric\/50:hover { border-color: rgb(0 255 136 / 0.5); }
+.hover\:border-leaf:hover { border-color: var(--color-leaf); }
+.hover\:border-leaf\/50:hover { border-color: rgb(34 197 94 / 0.5); }
+.hover\:border-electric:hover { border-color: var(--color-leaf); }
+.hover\:border-electric\/50:hover { border-color: rgb(34 197 94 / 0.5); }
 
 /* Group hover variants */
-.group:hover .group-hover\:text-electric { color: var(--color-electric); }
+.group:hover .group-hover\:text-leaf { color: var(--color-leaf); }
+.group:hover .group-hover\:text-electric { color: var(--color-leaf); }
 .group:hover .group-hover\:text-bone { color: var(--color-bone); }
-.group:hover .group-hover\:border-electric { border-color: var(--color-electric); }
-.group:hover .group-hover\:border-electric\/50 { border-color: rgb(0 255 136 / 0.5); }
+.group:hover .group-hover\:border-leaf { border-color: var(--color-leaf); }
+.group:hover .group-hover\:border-leaf\/50 { border-color: rgb(34 197 94 / 0.5); }
+.group:hover .group-hover\:border-electric { border-color: var(--color-leaf); }
+.group:hover .group-hover\:border-electric\/50 { border-color: rgb(34 197 94 / 0.5); }
 .group:hover .group-hover\:opacity-100 { opacity: 1; }
 
 /* Noise texture overlay */
@@ -383,7 +421,7 @@ body {
   z-index: 1000;
 }
 
-/* Grid pattern */
+/* Grid pattern - organic feel */
 .grid-bg {
   background-image:
     linear-gradient(var(--color-graphite) 1px, transparent 1px),
@@ -391,22 +429,30 @@ body {
   background-size: 60px 60px;
 }
 
-/* Glow effects */
+/* Glow effects - nature green */
+.glow-leaf {
+  box-shadow: 0 0 30px -5px var(--color-leaf);
+}
+
 .glow-electric {
-  box-shadow: 0 0 30px -5px var(--color-electric);
+  box-shadow: 0 0 30px -5px var(--color-leaf);
+}
+
+.glow-sage {
+  box-shadow: 0 0 30px -5px var(--color-sage);
 }
 
 .glow-plasma {
-  box-shadow: 0 0 30px -5px var(--color-plasma);
+  box-shadow: 0 0 30px -5px var(--color-sage);
 }
 
 .text-glow {
-  text-shadow: 0 0 30px var(--color-electric);
+  text-shadow: 0 0 30px var(--color-leaf);
 }
 
-/* Gradient text */
+/* Gradient text - nature theme */
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-electric) 0%, var(--color-plasma) 100%);
+  background: linear-gradient(135deg, var(--color-leaf) 0%, var(--color-sage) 50%, #2dd4bf 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -453,6 +499,16 @@ body {
 @keyframes draw-line {
   from { width: 0; }
   to { width: 100%; }
+}
+
+/* Gentle sway animation - organic feel */
+@keyframes sway {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
+
+.animate-sway {
+  animation: sway 4s ease-in-out infinite;
 }
 
 /* SVG Path Draw Animation */
@@ -507,7 +563,7 @@ body {
 .delay-5 { animation-delay: 0.5s; }
 .delay-6 { animation-delay: 0.6s; }
 
-/* Custom scrollbar */
+/* Custom scrollbar - forest theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -536,7 +592,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--color-electric) 0%, var(--color-plasma) 100%);
+  background: linear-gradient(135deg, var(--color-leaf) 0%, var(--color-sage) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 0;
@@ -546,10 +602,10 @@ body {
   opacity: 0.05;
 }
 
-/* Button styles */
+/* Button styles - organic feel */
 .btn-primary {
   position: relative;
-  background: var(--color-electric);
+  background: var(--color-leaf);
   color: var(--color-void);
   font-weight: 600;
   padding: 0.875rem 2rem;
@@ -569,7 +625,7 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 40px -10px var(--color-electric);
+  box-shadow: 0 10px 40px -10px var(--color-leaf);
 }
 
 .btn-primary:hover::before {
@@ -588,8 +644,8 @@ body {
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-electric);
-  color: var(--color-electric);
+  border-color: var(--color-leaf);
+  color: var(--color-leaf);
   transform: translateY(-2px);
 }
 
@@ -614,15 +670,15 @@ body {
 
 .input-dark:focus {
   outline: none;
-  border-color: var(--color-electric);
-  box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+  border-color: var(--color-leaf);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
 }
 
 .input-dark::placeholder {
   color: var(--color-silver);
 }
 
-/* Tag/badge */
+/* Tag/badge - nature theme */
 .tag {
   display: inline-block;
   padding: 0.25rem 0.75rem;
@@ -635,10 +691,16 @@ body {
   border-radius: 2px;
 }
 
+.tag-leaf {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--color-leaf);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
 .tag-electric {
-  background: rgba(0, 255, 136, 0.1);
-  color: var(--color-electric);
-  border: 1px solid rgba(0, 255, 136, 0.2);
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--color-leaf);
+  border: 1px solid rgba(34, 197, 94, 0.2);
 }
 
 /* Divider */

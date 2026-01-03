@@ -1,36 +1,77 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 48" fill="none">
   <defs>
-    <linearGradient id="iconGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#6366f1"/>
-      <stop offset="100%" stop-color="#a78bfa"/>
+    <!-- Background gradient - deep forest -->
+    <linearGradient id="logoBg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#065f46"/>
     </linearGradient>
-    <linearGradient id="echoGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.3"/>
+
+    <!-- Vine gradient -->
+    <linearGradient id="vineGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="50%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#86efac"/>
     </linearGradient>
+
+    <!-- Leaf gradient -->
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#86efac"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+
+    <!-- Text gradient -->
     <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#6366f1"/>
-      <stop offset="60%" stop-color="#818cf8"/>
-      <stop offset="100%" stop-color="#a78bfa"/>
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="50%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#2dd4bf"/>
     </linearGradient>
   </defs>
 
   <!-- Icon mark -->
   <g transform="translate(4, 4)">
-    <!-- Motion echo -->
-    <g transform="translate(-2, 2)" opacity="0.35">
-      <path d="M20 4 L24 12 L33 12.5 L27 18 L28.5 27 L20 22.5 L11.5 27 L13 18 L7 12.5 L16 12 Z"
-            fill="url(#iconGrad)"/>
-    </g>
-    <!-- Main star -->
-    <path d="M20 4 L24 12 L33 12.5 L27 18 L28.5 27 L20 22.5 L11.5 27 L13 18 L7 12.5 L16 12 Z"
-          fill="url(#iconGrad)"/>
-    <!-- Spark -->
-    <circle cx="24.5" cy="10" r="1.5" fill="white" opacity="0.9"/>
+    <!-- Background rounded square -->
+    <rect width="40" height="40" rx="9" fill="url(#logoBg)"/>
+
+    <!-- Main vine stem -->
+    <path
+      d="M12 30 C12 22, 12 18, 17 13 C20 10, 24 10, 28 11"
+      stroke="url(#vineGrad)"
+      stroke-width="3"
+      stroke-linecap="round"
+      fill="none"
+    />
+
+    <!-- Tendril curl -->
+    <path
+      d="M28 11 C30 9, 32 9, 32 11"
+      stroke="url(#vineGrad)"
+      stroke-width="2"
+      stroke-linecap="round"
+      fill="none"
+    />
+
+    <!-- Primary leaf -->
+    <path
+      d="M22 14 C26 10, 31 11, 29 16 C28 18, 24 17, 22 14"
+      fill="url(#leafGrad)"
+    />
+
+    <!-- Secondary leaf -->
+    <path
+      d="M14 21 C12 19, 13 17, 17 18 C18 19, 17 21, 14 21"
+      fill="url(#leafGrad)"
+      opacity="0.8"
+    />
+
+    <!-- Bud node -->
+    <circle cx="12" cy="30" r="2" fill="#86efac"/>
+
+    <!-- Highlight -->
+    <circle cx="25" cy="13" r="1" fill="white" opacity="0.6"/>
   </g>
 
   <!-- Wordmark: LivelyIcons -->
   <text x="52" y="33" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="26" font-weight="700" letter-spacing="-0.5">
-    <tspan fill="url(#textGrad)">Lively</tspan><tspan fill="#e2e8f0">Icons</tspan>
+    <tspan fill="url(#textGrad)">Lively</tspan><tspan fill="#eef5f0">Icons</tspan>
   </text>
 </svg>

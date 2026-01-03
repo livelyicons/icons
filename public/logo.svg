@@ -1,41 +1,96 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
   <defs>
-    <!-- Primary gradient -->
-    <linearGradient id="primary" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#6366f1"/>
-      <stop offset="50%" stop-color="#818cf8"/>
-      <stop offset="100%" stop-color="#a78bfa"/>
+    <!-- Background gradient - deep forest -->
+    <linearGradient id="logoBg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#065f46"/>
     </linearGradient>
 
-    <!-- Echo gradient (faded) -->
-    <linearGradient id="echo1" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.4"/>
+    <!-- Vine gradient - fresh growth -->
+    <linearGradient id="vineGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="50%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#86efac"/>
     </linearGradient>
 
-    <linearGradient id="echo2" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.15"/>
+    <!-- Leaf gradient -->
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#86efac"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+
+    <!-- Motion echo gradients for vine -->
+    <linearGradient id="vineEcho1" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#86efac" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <linearGradient id="vineEcho2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#86efac" stop-opacity="0.12"/>
     </linearGradient>
   </defs>
 
-  <!-- Motion echo 2 (furthest) -->
-  <g transform="translate(-16, 16)">
-    <path d="M100 30 L118 72 L164 76 L130 108 L140 154 L100 130 L60 154 L70 108 L36 76 L82 72 Z"
-          fill="url(#echo2)"/>
+  <!-- Background -->
+  <rect width="200" height="200" rx="44" fill="url(#logoBg)"/>
+
+  <!-- Motion echo 2 (furthest) - vine trail -->
+  <g transform="translate(-10, 10)">
+    <path
+      d="M62 150 C62 112, 62 88, 88 62 C100 50, 119 50, 138 56"
+      stroke="url(#vineEcho2)"
+      stroke-width="16"
+      stroke-linecap="round"
+      fill="none"
+    />
   </g>
 
-  <!-- Motion echo 1 -->
-  <g transform="translate(-8, 8)">
-    <path d="M100 30 L118 72 L164 76 L130 108 L140 154 L100 130 L60 154 L70 108 L36 76 L82 72 Z"
-          fill="url(#echo1)"/>
+  <!-- Motion echo 1 - vine trail -->
+  <g transform="translate(-5, 5)">
+    <path
+      d="M62 150 C62 112, 62 88, 88 62 C100 50, 119 50, 138 56"
+      stroke="url(#vineEcho1)"
+      stroke-width="16"
+      stroke-linecap="round"
+      fill="none"
+    />
   </g>
 
-  <!-- Main star -->
-  <path d="M100 30 L118 72 L164 76 L130 108 L140 154 L100 130 L60 154 L70 108 L36 76 L82 72 Z"
-        fill="url(#primary)"/>
+  <!-- Main vine stem - curved L shape suggesting growth -->
+  <path
+    d="M62 150 C62 112, 62 88, 88 62 C100 50, 119 50, 138 56"
+    stroke="url(#vineGradient)"
+    stroke-width="16"
+    stroke-linecap="round"
+    fill="none"
+  />
 
-  <!-- Highlight spark -->
-  <circle cx="118" cy="58" r="4" fill="white" opacity="0.9"/>
-  <circle cx="108" cy="48" r="2" fill="white" opacity="0.6"/>
+  <!-- Small tendril curl -->
+  <path
+    d="M138 56 C144 44, 156 44, 156 56"
+    stroke="url(#vineGradient)"
+    stroke-width="10"
+    stroke-linecap="round"
+    fill="none"
+  />
+
+  <!-- Primary leaf - unfurling at the top -->
+  <path
+    d="M112 69 C125 50, 150 56, 144 81 C138 94, 119 88, 112 69"
+    fill="url(#leafGradient)"
+  />
+
+  <!-- Secondary small leaf on stem -->
+  <path
+    d="M75 106 C62 94, 69 81, 88 88 C94 94, 88 106, 75 106"
+    fill="url(#leafGradient)"
+    opacity="0.8"
+  />
+
+  <!-- Tiny bud/node - suggesting new growth -->
+  <circle cx="62" cy="150" r="9" fill="#86efac"/>
+
+  <!-- Highlight dot on main leaf -->
+  <circle cx="125" cy="66" r="5" fill="white" opacity="0.6"/>
+  <circle cx="132" cy="58" r="2.5" fill="white" opacity="0.4"/>
 </svg>

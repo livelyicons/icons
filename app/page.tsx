@@ -302,12 +302,12 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="absolute -inset-4 bg-gradient-to-r from-electric/5 to-plasma/5 blur-xl" />
+              <div className="absolute -inset-4 bg-gradient-to-r from-leaf/5 to-sage/5 blur-xl" />
               <div className="relative code-block overflow-hidden">
                 <div className="flex items-center gap-2 px-4 py-3 border-b border-graphite">
-                  <div className="w-3 h-3 rounded-full bg-ember" />
-                  <div className="w-3 h-3 rounded-full bg-electric-dim" />
-                  <div className="w-3 h-3 rounded-full bg-electric" />
+                  <div className="w-3 h-3 rounded-full bg-amber" />
+                  <div className="w-3 h-3 rounded-full bg-leaf-dim" />
+                  <div className="w-3 h-3 rounded-full bg-leaf" />
                   <span className="ml-4 text-xs text-silver">example.tsx</span>
                 </div>
                 <pre className="p-6 overflow-x-auto text-sm leading-relaxed">
@@ -402,8 +402,20 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-6 h-6 bg-electric rounded-sm flex items-center justify-center">
-                <Star size={14} className="text-void" />
+              <div className="w-6 h-6 bg-leaf rounded-sm flex items-center justify-center">
+                {/* Leaf icon */}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-void">
+                  <path
+                    d="M12 3C7 3 3 7 3 12C3 14 4 16 6 17.5C8 19 10 19.5 12 19.5C14 19.5 16 19 18 17.5C20 16 21 14 21 12C21 7 17 3 12 3Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M12 19.5V12M12 12C12 12 9 9 6 8"
+                    stroke="var(--color-moss)"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
               </div>
               <span className="text-sm text-silver">
                 LivelyIcons
