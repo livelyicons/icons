@@ -170,7 +170,7 @@ export default function HomePageClient() {
               <h2 className="font-display text-3xl sm:text-4xl font-bold text-bone mb-6">
                 Built for modern React
               </h2>
-              <p className="text-silver mb-8 sm:mb-12">
+              <p className="text-silver mb-8 sm:mb-12 break-words">
                 Every icon is a fully typed React component with customizable size,
                 stroke width, and animation behavior.
               </p>
@@ -193,7 +193,7 @@ export default function HomePageClient() {
                         <h3 className="font-display font-semibold text-bone mb-1">
                           {feature.title}
                         </h3>
-                        <p className="text-sm text-silver">
+                        <p className="text-sm text-silver break-words">
                           {feature.description}
                         </p>
                       </div>
