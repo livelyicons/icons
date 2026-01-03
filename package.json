@@ -5,15 +5,31 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "bin": {
+    "motionicons": "./bin/motionicons.js"
+  },
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
+    },
+    "./static": {
+      "types": "./dist/static.d.ts",
+      "import": "./dist/static.mjs",
+      "require": "./dist/static.js"
+    },
+    "./css": {
+      "types": "./dist/css.d.ts",
+      "import": "./dist/css.mjs",
+      "require": "./dist/css.js"
     }
   },
   "files": [
     "dist",
+    "bin",
+    "src/icons",
+    "src/static",
     "README.md"
   ],
   "sideEffects": false,
@@ -24,7 +40,8 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "prepublishOnly": "pnpm run build:lib"
+    "generate:types": "npx tsx scripts/generate-types.ts",
+    "prepublishOnly": "pnpm run generate:types && pnpm run build:lib"
   },
   "keywords": [
     "react",
@@ -34,7 +51,10 @@
     "components",
     "animated-icons",
     "framer-motion",
-    "svg-icons"
+    "svg-icons",
+    "rsc",
+    "server-components",
+    "css-animations"
   ],
   "author": "",
   "license": "MIT",
@@ -42,6 +62,11 @@
     "motion": ">=11.0.0",
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "motion": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",

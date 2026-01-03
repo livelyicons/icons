@@ -1,27 +1,46 @@
 'use strict';
 
-var React2 = require('react');
+var chunkT7ULO2WW_js = require('./chunk-T7ULO2WW.js');
+var chunkKTPJ3FXL_js = require('./chunk-KTPJ3FXL.js');
+var chunkDGUM43GV_js = require('./chunk-DGUM43GV.js');
+var React3 = require('react');
 var react = require('motion/react');
 
-function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
+function _interopNamespace(e) {
+  if (e && e.__esModule) return e;
+  var n = Object.create(null);
+  if (e) {
+    Object.keys(e).forEach(function (k) {
+      if (k !== 'default') {
+        var d = Object.getOwnPropertyDescriptor(e, k);
+        Object.defineProperty(n, k, d.get ? d : {
+          enumerable: true,
+          get: function () { return e[k]; }
+        });
+      }
+    });
+  }
+  n.default = e;
+  return Object.freeze(n);
+}
 
-var React2__default = /*#__PURE__*/_interopDefault(React2);
+var React3__namespace = /*#__PURE__*/_interopNamespace(React3);
 
 var DEFAULT_CONFIG = {
   animated: true,
   defaultSize: 24,
   defaultStrokeWidth: 2
 };
-var IconContext = React2.createContext(void 0);
+var IconContext = React3.createContext(void 0);
 function IconProvider({ children, config }) {
   const mergedConfig = {
     ...DEFAULT_CONFIG,
     ...config
   };
-  return /* @__PURE__ */ React2__default.default.createElement(IconContext.Provider, { value: mergedConfig }, children);
+  return /* @__PURE__ */ React3__namespace.default.createElement(IconContext.Provider, { value: mergedConfig }, children);
 }
 function useIconContext() {
-  const context = React2.useContext(IconContext);
+  const context = React3.useContext(IconContext);
   return context ?? DEFAULT_CONFIG;
 }
 
@@ -40,6 +59,10 @@ var springSnappy = {
   type: "spring",
   stiffness: 500,
   damping: 25
+};
+var easeSmooth = {
+  duration: 0.3,
+  ease: "easeInOut"
 };
 var motionPresets = {
   scale: {
@@ -127,6 +150,17 @@ var motionPresets = {
 function getMotionPreset(type = "scale") {
   return motionPresets[type] || motionPresets.scale;
 }
+var motionTypeList = [
+  { type: "scale", label: "Scale", description: "Grow on hover" },
+  { type: "rotate", label: "Rotate", description: "Spin on hover" },
+  { type: "translate", label: "Translate", description: "Slide on hover" },
+  { type: "shake", label: "Shake", description: "Wobble effect" },
+  { type: "pulse", label: "Pulse", description: "Heartbeat effect" },
+  { type: "bounce", label: "Bounce", description: "Bouncy spring" },
+  { type: "draw", label: "Draw", description: "Fade reveal" },
+  { type: "spin", label: "Spin", description: "Continuous rotation" },
+  { type: "none", label: "None", description: "No animation" }
+];
 
 // src/hooks/useIconAnimation.ts
 function useIconAnimation(animated, motionType = "scale", trigger = "hover") {
@@ -312,6 +346,1071 @@ function useIconConfig(props) {
   };
 }
 
+// src/lib/icon-names.ts
+var ICON_NAMES = [
+  "Accessibility",
+  "Activity",
+  "Airplay",
+  "AlertCircle",
+  "AlertOctagon",
+  "AlertTriangle",
+  "Anchor",
+  "Apple",
+  "Archive",
+  "AreaChart",
+  "ArrowDown",
+  "ArrowDownLeft",
+  "ArrowDownRight",
+  "ArrowLeft",
+  "ArrowRight",
+  "ArrowUp",
+  "ArrowUpLeft",
+  "ArrowUpRight",
+  "AtSign",
+  "Award",
+  "Baby",
+  "Backpack",
+  "BadgeCheck",
+  "Ban",
+  "Banana",
+  "Bandage",
+  "BarChart",
+  "BarChart2",
+  "Barcode",
+  "Battery",
+  "BatteryCharging",
+  "BatteryLow",
+  "Beer",
+  "Bell",
+  "Bike",
+  "Bluetooth",
+  "Bone",
+  "Book",
+  "BookMarked",
+  "BookOpen",
+  "Bookmark",
+  "Brain",
+  "Brush",
+  "Building",
+  "Building2",
+  "Bus",
+  "Calculator",
+  "Calendar",
+  "Camera",
+  "Car",
+  "CarFront",
+  "Carrot",
+  "Cast",
+  "Castle",
+  "Check",
+  "CheckCircle",
+  "ChefHat",
+  "Cherry",
+  "ChevronDown",
+  "ChevronUp",
+  "ChevronsDown",
+  "ChevronsLeft",
+  "ChevronsRight",
+  "ChevronsUp",
+  "Church",
+  "Circle",
+  "Clipboard",
+  "ClipboardCheck",
+  "ClipboardCopy",
+  "ClipboardList",
+  "Clock",
+  "Cloud",
+  "CloudDrizzle",
+  "CloudLightning",
+  "CloudRain",
+  "CloudSnow",
+  "CloudSun",
+  "Code",
+  "Code2",
+  "Coffee",
+  "Columns",
+  "Command",
+  "Compass",
+  "Contact",
+  "Contact2",
+  "Cookie",
+  "Copy",
+  "CornerDownLeft",
+  "CornerDownRight",
+  "CornerUpLeft",
+  "CornerUpRight",
+  "Cpu",
+  "CreditCard",
+  "Crosshair",
+  "Crown",
+  "Cup",
+  "Database",
+  "Dice1",
+  "Dice2",
+  "Dice3",
+  "Dice4",
+  "Dice5",
+  "Dice6",
+  "Dna",
+  "DollarSign",
+  "Download",
+  "Droplet",
+  "Dumbbell",
+  "Ear",
+  "Edit",
+  "Eraser",
+  "Eye",
+  "Eye2",
+  "EyeOff",
+  "Factory",
+  "FastForward",
+  "File",
+  "FileCheck",
+  "FileMinus",
+  "FilePlus",
+  "FileText",
+  "FileX",
+  "Files",
+  "Film",
+  "Filter",
+  "Fingerprint",
+  "Flame",
+  "Folder",
+  "FolderMinus",
+  "FolderOpen",
+  "FolderPlus",
+  "Footprints",
+  "Frown",
+  "Fuel",
+  "Gamepad2",
+  "Gauge",
+  "Gift",
+  "Glasses",
+  "Globe",
+  "GraduationCap",
+  "Grape",
+  "Grid",
+  "Hammer",
+  "Hand",
+  "HardDrive",
+  "Hash",
+  "Headphones",
+  "Heart",
+  "HeartPulse",
+  "HelpCircle",
+  "Highlighter",
+  "Home",
+  "Hospital",
+  "IceCream",
+  "Inbox",
+  "Info",
+  "Joystick",
+  "Kanban",
+  "Key",
+  "KeyRound",
+  "Keyboard",
+  "Lamp",
+  "LampDesk",
+  "Landmark",
+  "Laptop",
+  "Layout",
+  "LayoutGrid",
+  "LayoutList",
+  "Leaf",
+  "Library",
+  "Lightbulb",
+  "LightbulbOff",
+  "LineChart",
+  "Link",
+  "List",
+  "Loader",
+  "Lock",
+  "LockOpen",
+  "Mail",
+  "Map",
+  "MapPin",
+  "Martini",
+  "Maximize",
+  "Maximize2",
+  "Medal",
+  "Meh",
+  "Menu",
+  "MessageCircle",
+  "MessageSquare",
+  "Mic",
+  "MicOff",
+  "Microscope",
+  "Milestone",
+  "Minimize",
+  "Minimize2",
+  "Minus",
+  "Monitor",
+  "Moon",
+  "MoreHorizontal",
+  "Mountain",
+  "MountainSnow",
+  "Mouse",
+  "MoveHorizontal",
+  "Music",
+  "Navigation",
+  "Navigation2",
+  "Notebook",
+  "NotebookPen",
+  "Package",
+  "Palette",
+  "PanelLeft",
+  "PanelRight",
+  "Paperclip",
+  "Parking",
+  "Pause",
+  "Pen",
+  "PenTool",
+  "Pencil",
+  "Percent",
+  "Phone",
+  "PhoneCall",
+  "PhoneIncoming",
+  "PhoneMissed",
+  "PhoneOff",
+  "PhoneOutgoing",
+  "PieChart",
+  "Pill",
+  "Pizza",
+  "Plane",
+  "PlaneLanding",
+  "PlaneTakeoff",
+  "Play",
+  "Plus",
+  "Presentation",
+  "Printer",
+  "Puzzle",
+  "QrCode",
+  "Radio",
+  "Receipt",
+  "Refresh",
+  "Repeat",
+  "Rewind",
+  "Rocket",
+  "Router",
+  "Rows",
+  "Rss",
+  "Ruler",
+  "Sailboat",
+  "Sandwich",
+  "Save",
+  "Scan",
+  "ScanLine",
+  "School",
+  "Screwdriver",
+  "SdCard",
+  "Search",
+  "Send",
+  "Send2",
+  "Server",
+  "Settings",
+  "Share",
+  "Shield",
+  "ShieldAlert",
+  "ShieldCheck",
+  "ShieldOff",
+  "Ship",
+  "ShoppingBag",
+  "ShoppingCart",
+  "Shuffle",
+  "Sidebar",
+  "Signal",
+  "SignalHigh",
+  "SignalLow",
+  "SignalZero",
+  "SkipBack",
+  "SkipForward",
+  "Smartphone",
+  "Smile",
+  "Snowflake",
+  "Speaker",
+  "Square",
+  "Star",
+  "Stethoscope",
+  "Store",
+  "Sun",
+  "Sunrise",
+  "Sunset",
+  "Sword",
+  "Swords",
+  "Syringe",
+  "Table",
+  "Table2",
+  "Tablet",
+  "Tag",
+  "Tag2",
+  "Tags",
+  "Target",
+  "Tent",
+  "Terminal",
+  "TestTube",
+  "TestTubes",
+  "Thermometer",
+  "Thermometer2",
+  "ThumbsDown",
+  "ThumbsUp",
+  "TrafficCone",
+  "Train",
+  "Trash",
+  "Tree",
+  "TrendingDown",
+  "TrendingUp",
+  "Triangle",
+  "Trophy",
+  "Truck",
+  "Tv",
+  "Umbrella",
+  "Unlock",
+  "Upload",
+  "UsbDrive",
+  "User",
+  "UserCheck",
+  "UserCog",
+  "UserMinus",
+  "UserPlus",
+  "UserX",
+  "Users",
+  "Utensils",
+  "UtensilsCrossed",
+  "Video",
+  "Video2",
+  "VideoOff",
+  "Voicemail",
+  "Volume",
+  "VolumeOff",
+  "Wallet",
+  "Wand",
+  "Wand2",
+  "Warehouse",
+  "Watch",
+  "Waves",
+  "Webcam",
+  "Wheelchair",
+  "Wifi",
+  "WifiOff",
+  "Wind",
+  "Wine",
+  "Wrench",
+  "X",
+  "XCircle",
+  "Zap"
+];
+var ICON_NAMES_KEBAB = [
+  "accessibility",
+  "activity",
+  "airplay",
+  "alert-circle",
+  "alert-octagon",
+  "alert-triangle",
+  "anchor",
+  "apple",
+  "archive",
+  "area-chart",
+  "arrow-down",
+  "arrow-down-left",
+  "arrow-down-right",
+  "arrow-left",
+  "arrow-right",
+  "arrow-up",
+  "arrow-up-left",
+  "arrow-up-right",
+  "at-sign",
+  "award",
+  "baby",
+  "backpack",
+  "badge-check",
+  "ban",
+  "banana",
+  "bandage",
+  "bar-chart",
+  "bar-chart-2",
+  "barcode",
+  "battery",
+  "battery-charging",
+  "battery-low",
+  "beer",
+  "bell",
+  "bike",
+  "bluetooth",
+  "bone",
+  "book",
+  "book-marked",
+  "book-open",
+  "bookmark",
+  "brain",
+  "brush",
+  "building",
+  "building2",
+  "bus",
+  "calculator",
+  "calendar",
+  "camera",
+  "car",
+  "car-front",
+  "carrot",
+  "cast",
+  "castle",
+  "check",
+  "check-circle",
+  "chef-hat",
+  "cherry",
+  "chevron-down",
+  "chevron-up",
+  "chevrons-down",
+  "chevrons-left",
+  "chevrons-right",
+  "chevrons-up",
+  "church",
+  "circle",
+  "clipboard",
+  "clipboard-check",
+  "clipboard-copy",
+  "clipboard-list",
+  "clock",
+  "cloud",
+  "cloud-drizzle",
+  "cloud-lightning",
+  "cloud-rain",
+  "cloud-snow",
+  "cloud-sun",
+  "code",
+  "code2",
+  "coffee",
+  "columns",
+  "command",
+  "compass",
+  "contact",
+  "contact2",
+  "cookie",
+  "copy",
+  "corner-down-left",
+  "corner-down-right",
+  "corner-up-left",
+  "corner-up-right",
+  "cpu",
+  "credit-card",
+  "crosshair",
+  "crown",
+  "cup",
+  "database",
+  "dice-1",
+  "dice-2",
+  "dice-3",
+  "dice-4",
+  "dice-5",
+  "dice-6",
+  "dna",
+  "dollar-sign",
+  "download",
+  "droplet",
+  "dumbbell",
+  "ear",
+  "edit",
+  "eraser",
+  "eye",
+  "eye-2",
+  "eye-off",
+  "factory",
+  "fast-forward",
+  "file",
+  "file-check",
+  "file-minus",
+  "file-plus",
+  "file-text",
+  "file-x",
+  "files",
+  "film",
+  "filter",
+  "fingerprint",
+  "flame",
+  "folder",
+  "folder-minus",
+  "folder-open",
+  "folder-plus",
+  "footprints",
+  "frown",
+  "fuel",
+  "gamepad-2",
+  "gauge",
+  "gift",
+  "glasses",
+  "globe",
+  "graduation-cap",
+  "grape",
+  "grid",
+  "hammer",
+  "hand",
+  "hard-drive",
+  "hash",
+  "headphones",
+  "heart",
+  "heart-pulse",
+  "help-circle",
+  "highlighter",
+  "home",
+  "hospital",
+  "ice-cream",
+  "inbox",
+  "info",
+  "joystick",
+  "kanban",
+  "key",
+  "key-round",
+  "keyboard",
+  "lamp",
+  "lamp-desk",
+  "landmark",
+  "laptop",
+  "layout",
+  "layout-grid",
+  "layout-list",
+  "leaf",
+  "library",
+  "lightbulb",
+  "lightbulb-off",
+  "line-chart",
+  "link",
+  "list",
+  "loader",
+  "lock",
+  "lock-open",
+  "mail",
+  "map",
+  "map-pin",
+  "martini",
+  "maximize",
+  "maximize-2",
+  "medal",
+  "meh",
+  "menu",
+  "message-circle",
+  "message-square",
+  "mic",
+  "mic-off",
+  "microscope",
+  "milestone",
+  "minimize",
+  "minimize-2",
+  "minus",
+  "monitor",
+  "moon",
+  "more-horizontal",
+  "mountain",
+  "mountain-snow",
+  "mouse",
+  "move-horizontal",
+  "music",
+  "navigation",
+  "navigation-2",
+  "notebook",
+  "notebook-pen",
+  "package",
+  "palette",
+  "panel-left",
+  "panel-right",
+  "paperclip",
+  "parking",
+  "pause",
+  "pen",
+  "pen-tool",
+  "pencil",
+  "percent",
+  "phone",
+  "phone-call",
+  "phone-incoming",
+  "phone-missed",
+  "phone-off",
+  "phone-outgoing",
+  "pie-chart",
+  "pill",
+  "pizza",
+  "plane",
+  "plane-landing",
+  "plane-takeoff",
+  "play",
+  "plus",
+  "presentation",
+  "printer",
+  "puzzle",
+  "qr-code",
+  "radio",
+  "receipt",
+  "refresh",
+  "repeat",
+  "rewind",
+  "rocket",
+  "router",
+  "rows",
+  "rss",
+  "ruler",
+  "sailboat",
+  "sandwich",
+  "save",
+  "scan",
+  "scan-line",
+  "school",
+  "screwdriver",
+  "sd-card",
+  "search",
+  "send",
+  "send-2",
+  "server",
+  "settings",
+  "share",
+  "shield",
+  "shield-alert",
+  "shield-check",
+  "shield-off",
+  "ship",
+  "shopping-bag",
+  "shopping-cart",
+  "shuffle",
+  "sidebar",
+  "signal",
+  "signal-high",
+  "signal-low",
+  "signal-zero",
+  "skip-back",
+  "skip-forward",
+  "smartphone",
+  "smile",
+  "snowflake",
+  "speaker",
+  "square",
+  "star",
+  "stethoscope",
+  "store",
+  "sun",
+  "sunrise",
+  "sunset",
+  "sword",
+  "swords",
+  "syringe",
+  "table",
+  "table-2",
+  "tablet",
+  "tag",
+  "tag2",
+  "tags",
+  "target",
+  "tent",
+  "terminal",
+  "test-tube",
+  "test-tubes",
+  "thermometer",
+  "thermometer-2",
+  "thumbs-down",
+  "thumbs-up",
+  "traffic-cone",
+  "train",
+  "trash",
+  "tree",
+  "trending-down",
+  "trending-up",
+  "triangle",
+  "trophy",
+  "truck",
+  "tv",
+  "umbrella",
+  "unlock",
+  "upload",
+  "usb-drive",
+  "user",
+  "user-check",
+  "user-cog",
+  "user-minus",
+  "user-plus",
+  "user-x",
+  "users",
+  "utensils",
+  "utensils-crossed",
+  "video",
+  "video-2",
+  "video-off",
+  "voicemail",
+  "volume",
+  "volume-off",
+  "wallet",
+  "wand",
+  "wand-2",
+  "warehouse",
+  "watch",
+  "waves",
+  "webcam",
+  "wheelchair",
+  "wifi",
+  "wifi-off",
+  "wind",
+  "wine",
+  "wrench",
+  "x",
+  "x-circle",
+  "zap"
+];
+var ICON_COUNT = 350;
+var ICON_NAME_MAP = {
+  "accessibility": "Accessibility",
+  "activity": "Activity",
+  "airplay": "Airplay",
+  "alert-circle": "AlertCircle",
+  "alert-octagon": "AlertOctagon",
+  "alert-triangle": "AlertTriangle",
+  "anchor": "Anchor",
+  "apple": "Apple",
+  "archive": "Archive",
+  "area-chart": "AreaChart",
+  "arrow-down": "ArrowDown",
+  "arrow-down-left": "ArrowDownLeft",
+  "arrow-down-right": "ArrowDownRight",
+  "arrow-left": "ArrowLeft",
+  "arrow-right": "ArrowRight",
+  "arrow-up": "ArrowUp",
+  "arrow-up-left": "ArrowUpLeft",
+  "arrow-up-right": "ArrowUpRight",
+  "at-sign": "AtSign",
+  "award": "Award",
+  "baby": "Baby",
+  "backpack": "Backpack",
+  "badge-check": "BadgeCheck",
+  "ban": "Ban",
+  "banana": "Banana",
+  "bandage": "Bandage",
+  "bar-chart": "BarChart",
+  "bar-chart-2": "BarChart2",
+  "barcode": "Barcode",
+  "battery": "Battery",
+  "battery-charging": "BatteryCharging",
+  "battery-low": "BatteryLow",
+  "beer": "Beer",
+  "bell": "Bell",
+  "bike": "Bike",
+  "bluetooth": "Bluetooth",
+  "bone": "Bone",
+  "book": "Book",
+  "book-marked": "BookMarked",
+  "book-open": "BookOpen",
+  "bookmark": "Bookmark",
+  "brain": "Brain",
+  "brush": "Brush",
+  "building": "Building",
+  "building2": "Building2",
+  "bus": "Bus",
+  "calculator": "Calculator",
+  "calendar": "Calendar",
+  "camera": "Camera",
+  "car": "Car",
+  "car-front": "CarFront",
+  "carrot": "Carrot",
+  "cast": "Cast",
+  "castle": "Castle",
+  "check": "Check",
+  "check-circle": "CheckCircle",
+  "chef-hat": "ChefHat",
+  "cherry": "Cherry",
+  "chevron-down": "ChevronDown",
+  "chevron-up": "ChevronUp",
+  "chevrons-down": "ChevronsDown",
+  "chevrons-left": "ChevronsLeft",
+  "chevrons-right": "ChevronsRight",
+  "chevrons-up": "ChevronsUp",
+  "church": "Church",
+  "circle": "Circle",
+  "clipboard": "Clipboard",
+  "clipboard-check": "ClipboardCheck",
+  "clipboard-copy": "ClipboardCopy",
+  "clipboard-list": "ClipboardList",
+  "clock": "Clock",
+  "cloud": "Cloud",
+  "cloud-drizzle": "CloudDrizzle",
+  "cloud-lightning": "CloudLightning",
+  "cloud-rain": "CloudRain",
+  "cloud-snow": "CloudSnow",
+  "cloud-sun": "CloudSun",
+  "code": "Code",
+  "code2": "Code2",
+  "coffee": "Coffee",
+  "columns": "Columns",
+  "command": "Command",
+  "compass": "Compass",
+  "contact": "Contact",
+  "contact2": "Contact2",
+  "cookie": "Cookie",
+  "copy": "Copy",
+  "corner-down-left": "CornerDownLeft",
+  "corner-down-right": "CornerDownRight",
+  "corner-up-left": "CornerUpLeft",
+  "corner-up-right": "CornerUpRight",
+  "cpu": "Cpu",
+  "credit-card": "CreditCard",
+  "crosshair": "Crosshair",
+  "crown": "Crown",
+  "cup": "Cup",
+  "database": "Database",
+  "dice-1": "Dice1",
+  "dice-2": "Dice2",
+  "dice-3": "Dice3",
+  "dice-4": "Dice4",
+  "dice-5": "Dice5",
+  "dice-6": "Dice6",
+  "dna": "Dna",
+  "dollar-sign": "DollarSign",
+  "download": "Download",
+  "droplet": "Droplet",
+  "dumbbell": "Dumbbell",
+  "ear": "Ear",
+  "edit": "Edit",
+  "eraser": "Eraser",
+  "eye": "Eye",
+  "eye-2": "Eye2",
+  "eye-off": "EyeOff",
+  "factory": "Factory",
+  "fast-forward": "FastForward",
+  "file": "File",
+  "file-check": "FileCheck",
+  "file-minus": "FileMinus",
+  "file-plus": "FilePlus",
+  "file-text": "FileText",
+  "file-x": "FileX",
+  "files": "Files",
+  "film": "Film",
+  "filter": "Filter",
+  "fingerprint": "Fingerprint",
+  "flame": "Flame",
+  "folder": "Folder",
+  "folder-minus": "FolderMinus",
+  "folder-open": "FolderOpen",
+  "folder-plus": "FolderPlus",
+  "footprints": "Footprints",
+  "frown": "Frown",
+  "fuel": "Fuel",
+  "gamepad-2": "Gamepad2",
+  "gauge": "Gauge",
+  "gift": "Gift",
+  "glasses": "Glasses",
+  "globe": "Globe",
+  "graduation-cap": "GraduationCap",
+  "grape": "Grape",
+  "grid": "Grid",
+  "hammer": "Hammer",
+  "hand": "Hand",
+  "hard-drive": "HardDrive",
+  "hash": "Hash",
+  "headphones": "Headphones",
+  "heart": "Heart",
+  "heart-pulse": "HeartPulse",
+  "help-circle": "HelpCircle",
+  "highlighter": "Highlighter",
+  "home": "Home",
+  "hospital": "Hospital",
+  "ice-cream": "IceCream",
+  "inbox": "Inbox",
+  "info": "Info",
+  "joystick": "Joystick",
+  "kanban": "Kanban",
+  "key": "Key",
+  "key-round": "KeyRound",
+  "keyboard": "Keyboard",
+  "lamp": "Lamp",
+  "lamp-desk": "LampDesk",
+  "landmark": "Landmark",
+  "laptop": "Laptop",
+  "layout": "Layout",
+  "layout-grid": "LayoutGrid",
+  "layout-list": "LayoutList",
+  "leaf": "Leaf",
+  "library": "Library",
+  "lightbulb": "Lightbulb",
+  "lightbulb-off": "LightbulbOff",
+  "line-chart": "LineChart",
+  "link": "Link",
+  "list": "List",
+  "loader": "Loader",
+  "lock": "Lock",
+  "lock-open": "LockOpen",
+  "mail": "Mail",
+  "map": "Map",
+  "map-pin": "MapPin",
+  "martini": "Martini",
+  "maximize": "Maximize",
+  "maximize-2": "Maximize2",
+  "medal": "Medal",
+  "meh": "Meh",
+  "menu": "Menu",
+  "message-circle": "MessageCircle",
+  "message-square": "MessageSquare",
+  "mic": "Mic",
+  "mic-off": "MicOff",
+  "microscope": "Microscope",
+  "milestone": "Milestone",
+  "minimize": "Minimize",
+  "minimize-2": "Minimize2",
+  "minus": "Minus",
+  "monitor": "Monitor",
+  "moon": "Moon",
+  "more-horizontal": "MoreHorizontal",
+  "mountain": "Mountain",
+  "mountain-snow": "MountainSnow",
+  "mouse": "Mouse",
+  "move-horizontal": "MoveHorizontal",
+  "music": "Music",
+  "navigation": "Navigation",
+  "navigation-2": "Navigation2",
+  "notebook": "Notebook",
+  "notebook-pen": "NotebookPen",
+  "package": "Package",
+  "palette": "Palette",
+  "panel-left": "PanelLeft",
+  "panel-right": "PanelRight",
+  "paperclip": "Paperclip",
+  "parking": "Parking",
+  "pause": "Pause",
+  "pen": "Pen",
+  "pen-tool": "PenTool",
+  "pencil": "Pencil",
+  "percent": "Percent",
+  "phone": "Phone",
+  "phone-call": "PhoneCall",
+  "phone-incoming": "PhoneIncoming",
+  "phone-missed": "PhoneMissed",
+  "phone-off": "PhoneOff",
+  "phone-outgoing": "PhoneOutgoing",
+  "pie-chart": "PieChart",
+  "pill": "Pill",
+  "pizza": "Pizza",
+  "plane": "Plane",
+  "plane-landing": "PlaneLanding",
+  "plane-takeoff": "PlaneTakeoff",
+  "play": "Play",
+  "plus": "Plus",
+  "presentation": "Presentation",
+  "printer": "Printer",
+  "puzzle": "Puzzle",
+  "qr-code": "QrCode",
+  "radio": "Radio",
+  "receipt": "Receipt",
+  "refresh": "Refresh",
+  "repeat": "Repeat",
+  "rewind": "Rewind",
+  "rocket": "Rocket",
+  "router": "Router",
+  "rows": "Rows",
+  "rss": "Rss",
+  "ruler": "Ruler",
+  "sailboat": "Sailboat",
+  "sandwich": "Sandwich",
+  "save": "Save",
+  "scan": "Scan",
+  "scan-line": "ScanLine",
+  "school": "School",
+  "screwdriver": "Screwdriver",
+  "sd-card": "SdCard",
+  "search": "Search",
+  "send": "Send",
+  "send-2": "Send2",
+  "server": "Server",
+  "settings": "Settings",
+  "share": "Share",
+  "shield": "Shield",
+  "shield-alert": "ShieldAlert",
+  "shield-check": "ShieldCheck",
+  "shield-off": "ShieldOff",
+  "ship": "Ship",
+  "shopping-bag": "ShoppingBag",
+  "shopping-cart": "ShoppingCart",
+  "shuffle": "Shuffle",
+  "sidebar": "Sidebar",
+  "signal": "Signal",
+  "signal-high": "SignalHigh",
+  "signal-low": "SignalLow",
+  "signal-zero": "SignalZero",
+  "skip-back": "SkipBack",
+  "skip-forward": "SkipForward",
+  "smartphone": "Smartphone",
+  "smile": "Smile",
+  "snowflake": "Snowflake",
+  "speaker": "Speaker",
+  "square": "Square",
+  "star": "Star",
+  "stethoscope": "Stethoscope",
+  "store": "Store",
+  "sun": "Sun",
+  "sunrise": "Sunrise",
+  "sunset": "Sunset",
+  "sword": "Sword",
+  "swords": "Swords",
+  "syringe": "Syringe",
+  "table": "Table",
+  "table-2": "Table2",
+  "tablet": "Tablet",
+  "tag": "Tag",
+  "tag2": "Tag2",
+  "tags": "Tags",
+  "target": "Target",
+  "tent": "Tent",
+  "terminal": "Terminal",
+  "test-tube": "TestTube",
+  "test-tubes": "TestTubes",
+  "thermometer": "Thermometer",
+  "thermometer-2": "Thermometer2",
+  "thumbs-down": "ThumbsDown",
+  "thumbs-up": "ThumbsUp",
+  "traffic-cone": "TrafficCone",
+  "train": "Train",
+  "trash": "Trash",
+  "tree": "Tree",
+  "trending-down": "TrendingDown",
+  "trending-up": "TrendingUp",
+  "triangle": "Triangle",
+  "trophy": "Trophy",
+  "truck": "Truck",
+  "tv": "Tv",
+  "umbrella": "Umbrella",
+  "unlock": "Unlock",
+  "upload": "Upload",
+  "usb-drive": "UsbDrive",
+  "user": "User",
+  "user-check": "UserCheck",
+  "user-cog": "UserCog",
+  "user-minus": "UserMinus",
+  "user-plus": "UserPlus",
+  "user-x": "UserX",
+  "users": "Users",
+  "utensils": "Utensils",
+  "utensils-crossed": "UtensilsCrossed",
+  "video": "Video",
+  "video-2": "Video2",
+  "video-off": "VideoOff",
+  "voicemail": "Voicemail",
+  "volume": "Volume",
+  "volume-off": "VolumeOff",
+  "wallet": "Wallet",
+  "wand": "Wand",
+  "wand-2": "Wand2",
+  "warehouse": "Warehouse",
+  "watch": "Watch",
+  "waves": "Waves",
+  "webcam": "Webcam",
+  "wheelchair": "Wheelchair",
+  "wifi": "Wifi",
+  "wifi-off": "WifiOff",
+  "wind": "Wind",
+  "wine": "Wine",
+  "wrench": "Wrench",
+  "x": "X",
+  "x-circle": "XCircle",
+  "zap": "Zap"
+};
+function isIconName(name) {
+  return ICON_NAMES.includes(name);
+}
+function isIconNameKebab(name) {
+  return ICON_NAMES_KEBAB.includes(name);
+}
+
 // src/lib/animations.ts
 var draw = {
   initial: { pathLength: 0 },
@@ -409,6 +1508,277 @@ var animations = {
   fade,
   pop
 };
+
+// src/lib/define-motion-preset.ts
+function defineMotionPreset(name, options) {
+  const variants = {
+    initial: options.initial ?? {},
+    hover: options.hover
+  };
+  if (options.tap) {
+    variants.tap = options.tap;
+  }
+  const defaultTransition = {
+    type: "spring",
+    stiffness: 400,
+    damping: 15
+  };
+  return {
+    name,
+    variants,
+    transition: options.transition ?? defaultTransition
+  };
+}
+function composeMotionPresets(presets) {
+  const combinedInitial = {};
+  const combinedHover = {};
+  const combinedTap = {};
+  let combinedTransition = {};
+  for (const preset of presets) {
+    const initial = preset.variants.initial;
+    const hover = preset.variants.hover;
+    const tap = preset.variants.tap;
+    if (initial) {
+      Object.assign(combinedInitial, initial);
+    }
+    if (hover) {
+      Object.assign(combinedHover, hover);
+    }
+    if (tap) {
+      Object.assign(combinedTap, tap);
+    }
+    if (preset.transition) {
+      combinedTransition = { ...combinedTransition, ...preset.transition };
+    }
+  }
+  const variants = {
+    initial: combinedInitial,
+    hover: combinedHover
+  };
+  if (Object.keys(combinedTap).length > 0) {
+    variants.tap = combinedTap;
+  }
+  return {
+    name: "composed",
+    variants,
+    transition: combinedTransition
+  };
+}
+function extendMotionPreset(basePreset, overrides) {
+  const baseInitial = basePreset.variants.initial;
+  const baseHover = basePreset.variants.hover;
+  const baseTap = basePreset.variants.tap;
+  const variants = {
+    initial: { ...baseInitial, ...overrides.initial },
+    hover: { ...baseHover, ...overrides.hover }
+  };
+  if (baseTap || overrides.tap) {
+    variants.tap = { ...baseTap, ...overrides.tap };
+  }
+  return {
+    name: `${basePreset.name}-extended`,
+    variants,
+    transition: overrides.transition ?? basePreset.transition
+  };
+}
+var customPresets = {
+  /**
+   * Wiggle animation - rotates back and forth
+   */
+  wiggle: defineMotionPreset("wiggle", {
+    initial: { rotate: 0 },
+    hover: { rotate: [0, -12, 12, -8, 8, -4, 4, 0] },
+    transition: { duration: 0.6, ease: "easeInOut" }
+  }),
+  /**
+   * Jello animation - elastic squish effect
+   */
+  jello: defineMotionPreset("jello", {
+    initial: { scaleX: 1, scaleY: 1 },
+    hover: {
+      scaleX: [1, 1.25, 0.75, 1.15, 0.95, 1.05, 1],
+      scaleY: [1, 0.75, 1.25, 0.85, 1.05, 0.95, 1]
+    },
+    transition: { duration: 0.6 }
+  }),
+  /**
+   * Rubberband animation - stretchy bounce
+   */
+  rubberband: defineMotionPreset("rubberband", {
+    initial: { scaleX: 1, scaleY: 1 },
+    hover: {
+      scaleX: [1, 1.2, 0.9, 1.1, 0.95, 1],
+      scaleY: [1, 0.8, 1.1, 0.9, 1.05, 1]
+    },
+    transition: { duration: 0.5, ease: "easeOut" }
+  }),
+  /**
+   * Heartbeat animation - pulsing effect
+   */
+  heartbeat: defineMotionPreset("heartbeat", {
+    initial: { scale: 1 },
+    hover: { scale: [1, 1.15, 1, 1.1, 1] },
+    transition: { duration: 0.8, times: [0, 0.14, 0.28, 0.42, 1] }
+  }),
+  /**
+   * Swing animation - pendulum effect
+   */
+  swing: defineMotionPreset("swing", {
+    initial: { rotate: 0 },
+    hover: { rotate: [0, 15, -10, 5, -5, 0] },
+    transition: { duration: 0.6 }
+  }),
+  /**
+   * Tada animation - attention-grabbing effect
+   */
+  tada: defineMotionPreset("tada", {
+    initial: { scale: 1, rotate: 0 },
+    hover: {
+      scale: [1, 0.9, 0.9, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1],
+      rotate: [0, -3, -3, 3, -3, 3, -3, 3, -3, 0]
+    },
+    transition: { duration: 0.8 }
+  }),
+  /**
+   * Float animation - gentle up and down motion
+   */
+  float: defineMotionPreset("float", {
+    initial: { y: 0 },
+    hover: { y: [0, -8, 0] },
+    transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
+  }),
+  /**
+   * Glow animation - scale with opacity pulse
+   */
+  glow: defineMotionPreset("glow", {
+    initial: { scale: 1, opacity: 1 },
+    hover: {
+      scale: [1, 1.1, 1.05],
+      opacity: [1, 0.8, 1]
+    },
+    transition: { duration: 0.3 }
+  })
+};
+var LazyMotionSvg = React3.lazy(async () => {
+  const { motion: motion351 } = await import('motion/react');
+  const MotionSvgWrapper = React3.forwardRef((props, ref) => {
+    return /* @__PURE__ */ React3__namespace.createElement(motion351.svg, { ref, ...props });
+  });
+  MotionSvgWrapper.displayName = "MotionSvgWrapper";
+  return { default: MotionSvgWrapper };
+});
+var StaticSvg = React3.forwardRef(
+  (props, ref) => {
+    return /* @__PURE__ */ React3__namespace.createElement("svg", { ref, ...props });
+  }
+);
+StaticSvg.displayName = "StaticSvg";
+function LazyMotionIcon({
+  animated,
+  size,
+  strokeWidth,
+  className,
+  variants,
+  transition,
+  initial,
+  whileHover,
+  whileInView,
+  animate,
+  viewport,
+  "aria-label": ariaLabel,
+  children,
+  viewBox = "0 0 24 24"
+}) {
+  const commonProps = {
+    width: size,
+    height: size,
+    viewBox,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    className,
+    role: ariaLabel ? "img" : void 0,
+    "aria-label": ariaLabel,
+    "aria-hidden": ariaLabel ? void 0 : true
+  };
+  if (!animated) {
+    return /* @__PURE__ */ React3__namespace.createElement(StaticSvg, { ...commonProps }, children);
+  }
+  return /* @__PURE__ */ React3__namespace.createElement(
+    React3.Suspense,
+    {
+      fallback: /* @__PURE__ */ React3__namespace.createElement(StaticSvg, { ...commonProps }, children)
+    },
+    /* @__PURE__ */ React3__namespace.createElement(
+      LazyMotionSvg,
+      {
+        ...commonProps,
+        variants,
+        transition,
+        initial,
+        whileHover,
+        whileInView,
+        animate,
+        viewport
+      },
+      children
+    )
+  );
+}
+var LazyMotionPath = React3.lazy(async () => {
+  const { motion: motion351 } = await import('motion/react');
+  const MotionPathWrapper = React3.forwardRef((props, ref) => {
+    return /* @__PURE__ */ React3__namespace.createElement(motion351.path, { ref, ...props });
+  });
+  MotionPathWrapper.displayName = "MotionPathWrapper";
+  return { default: MotionPathWrapper };
+});
+var StaticPath = React3.forwardRef(
+  (props, ref) => {
+    return /* @__PURE__ */ React3__namespace.createElement("path", { ref, ...props });
+  }
+);
+StaticPath.displayName = "StaticPath";
+function LazyMotionPathElement({
+  animated,
+  d,
+  pathLength = 1,
+  variants,
+  transition,
+  initial,
+  animate,
+  className
+}) {
+  if (!animated) {
+    return /* @__PURE__ */ React3__namespace.createElement(StaticPath, { d, pathLength, className });
+  }
+  return /* @__PURE__ */ React3__namespace.createElement(React3.Suspense, { fallback: /* @__PURE__ */ React3__namespace.createElement(StaticPath, { d, pathLength, className }) }, /* @__PURE__ */ React3__namespace.createElement(
+    LazyMotionPath,
+    {
+      d,
+      pathLength,
+      variants,
+      transition,
+      initial,
+      animate,
+      className
+    }
+  ));
+}
+function isMotionLoaded() {
+  try {
+    chunkDGUM43GV_js.__require.resolve("motion/react");
+    return true;
+  } catch {
+    return false;
+  }
+}
+function preloadMotion() {
+  import('motion/react').catch(() => {
+  });
+}
 var Accessibility = ({
   size = 24,
   strokeWidth = 2,
@@ -1036,9 +2406,11 @@ var Eye = ({
   trigger = "hover",
   "aria-label": ariaLabel
 }) => {
-  const { animationProps, drawWrapperProps } = useIconAnimation(animated, motionType, trigger);
+  const { animationProps, pathAnimationProps, drawWrapperProps } = useIconAnimation(animated, motionType, trigger);
   const isDraw = motionType === "draw";
-  const drawClass = isDraw ? "draw-animation" : "";
+  const useCssDraw = isDraw && trigger === "hover";
+  const useMotionDraw = isDraw && trigger !== "hover";
+  const drawClass = useCssDraw ? "draw-animation" : "";
   return /* @__PURE__ */ React.createElement(
     react.motion.svg,
     {
@@ -1051,27 +2423,29 @@ var Eye = ({
       strokeLinecap: "round",
       strokeLinejoin: "round",
       className: `${className || ""} ${drawClass}`.trim(),
-      ...!isDraw ? animationProps : drawWrapperProps,
+      ...!isDraw ? animationProps : useCssDraw ? drawWrapperProps : {},
       role: ariaLabel ? "img" : void 0,
       "aria-label": ariaLabel,
       "aria-hidden": ariaLabel ? void 0 : true
     },
     /* @__PURE__ */ React.createElement(
-      "path",
+      react.motion.path,
       {
         d: "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z",
         pathLength: 1,
-        className: isDraw ? "draw-path" : ""
+        className: useCssDraw ? "draw-path" : "",
+        ...useMotionDraw ? pathAnimationProps : {}
       }
     ),
     /* @__PURE__ */ React.createElement(
-      "circle",
+      react.motion.circle,
       {
         cx: "12",
         cy: "12",
         r: "3",
         pathLength: 1,
-        className: isDraw ? "draw-path" : ""
+        className: useCssDraw ? "draw-path" : "",
+        ...useMotionDraw ? pathAnimationProps : {}
       }
     )
   );
@@ -12100,6 +13474,206 @@ var Milestone = ({
   );
 };
 
+Object.defineProperty(exports, "StaticAlertCircle", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticAlertCircle; }
+});
+Object.defineProperty(exports, "StaticArrowLeft", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticArrowLeft; }
+});
+Object.defineProperty(exports, "StaticArrowRight", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticArrowRight; }
+});
+Object.defineProperty(exports, "StaticBell", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticBell; }
+});
+Object.defineProperty(exports, "StaticCalendar", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticCalendar; }
+});
+Object.defineProperty(exports, "StaticCheck", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticCheck; }
+});
+Object.defineProperty(exports, "StaticCheckCircle", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticCheckCircle; }
+});
+Object.defineProperty(exports, "StaticChevronDown", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticChevronDown; }
+});
+Object.defineProperty(exports, "StaticChevronUp", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticChevronUp; }
+});
+Object.defineProperty(exports, "StaticClock", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticClock; }
+});
+Object.defineProperty(exports, "StaticCopy", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticCopy; }
+});
+Object.defineProperty(exports, "StaticDownload", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticDownload; }
+});
+Object.defineProperty(exports, "StaticEdit", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticEdit; }
+});
+Object.defineProperty(exports, "StaticEye", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticEye; }
+});
+Object.defineProperty(exports, "StaticEyeOff", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticEyeOff; }
+});
+Object.defineProperty(exports, "StaticHeart", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticHeart; }
+});
+Object.defineProperty(exports, "StaticHelpCircle", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticHelpCircle; }
+});
+Object.defineProperty(exports, "StaticHome", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticHome; }
+});
+Object.defineProperty(exports, "StaticInfo", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticInfo; }
+});
+Object.defineProperty(exports, "StaticLoader", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticLoader; }
+});
+Object.defineProperty(exports, "StaticLock", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticLock; }
+});
+Object.defineProperty(exports, "StaticMail", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticMail; }
+});
+Object.defineProperty(exports, "StaticMenu", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticMenu; }
+});
+Object.defineProperty(exports, "StaticMessageCircle", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticMessageCircle; }
+});
+Object.defineProperty(exports, "StaticMinus", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticMinus; }
+});
+Object.defineProperty(exports, "StaticPhone", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticPhone; }
+});
+Object.defineProperty(exports, "StaticPlus", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticPlus; }
+});
+Object.defineProperty(exports, "StaticRefresh", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticRefresh; }
+});
+Object.defineProperty(exports, "StaticSearch", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticSearch; }
+});
+Object.defineProperty(exports, "StaticSettings", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticSettings; }
+});
+Object.defineProperty(exports, "StaticShare", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticShare; }
+});
+Object.defineProperty(exports, "StaticStar", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticStar; }
+});
+Object.defineProperty(exports, "StaticThumbsDown", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticThumbsDown; }
+});
+Object.defineProperty(exports, "StaticThumbsUp", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticThumbsUp; }
+});
+Object.defineProperty(exports, "StaticTrash", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticTrash; }
+});
+Object.defineProperty(exports, "StaticUpload", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticUpload; }
+});
+Object.defineProperty(exports, "StaticUser", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticUser; }
+});
+Object.defineProperty(exports, "StaticUsers", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticUsers; }
+});
+Object.defineProperty(exports, "StaticX", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticX; }
+});
+Object.defineProperty(exports, "StaticXCircle", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.StaticXCircle; }
+});
+Object.defineProperty(exports, "createStaticIcon", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.createStaticIcon; }
+});
+Object.defineProperty(exports, "withStatic", {
+  enumerable: true,
+  get: function () { return chunkT7ULO2WW_js.withStatic; }
+});
+Object.defineProperty(exports, "cssAnimationClasses", {
+  enumerable: true,
+  get: function () { return chunkKTPJ3FXL_js.cssAnimationClasses; }
+});
+Object.defineProperty(exports, "cssKeyframes", {
+  enumerable: true,
+  get: function () { return chunkKTPJ3FXL_js.cssKeyframes; }
+});
+Object.defineProperty(exports, "cssStylesheet", {
+  enumerable: true,
+  get: function () { return chunkKTPJ3FXL_js.cssStylesheet; }
+});
+Object.defineProperty(exports, "getCssAnimationClasses", {
+  enumerable: true,
+  get: function () { return chunkKTPJ3FXL_js.getCssAnimationClasses; }
+});
+Object.defineProperty(exports, "injectCssAnimations", {
+  enumerable: true,
+  get: function () { return chunkKTPJ3FXL_js.injectCssAnimations; }
+});
+Object.defineProperty(exports, "motionTypeToCssClass", {
+  enumerable: true,
+  get: function () { return chunkKTPJ3FXL_js.motionTypeToCssClass; }
+});
+Object.defineProperty(exports, "removeCssAnimations", {
+  enumerable: true,
+  get: function () { return chunkKTPJ3FXL_js.removeCssAnimations; }
+});
+Object.defineProperty(exports, "triggerTypeToCssClass", {
+  enumerable: true,
+  get: function () { return chunkKTPJ3FXL_js.triggerTypeToCssClass; }
+});
 exports.Accessibility = Accessibility;
 exports.Activity = Activity;
 exports.Airplay = Airplay;
@@ -12253,6 +13827,10 @@ exports.HelpCircle = HelpCircle;
 exports.Highlighter = Highlighter;
 exports.Home = Home;
 exports.Hospital = Hospital;
+exports.ICON_COUNT = ICON_COUNT;
+exports.ICON_NAMES = ICON_NAMES;
+exports.ICON_NAMES_KEBAB = ICON_NAMES_KEBAB;
+exports.ICON_NAME_MAP = ICON_NAME_MAP;
 exports.IceCream = IceCream;
 exports.IconProvider = IconProvider;
 exports.Inbox = Inbox;
@@ -12269,6 +13847,8 @@ exports.Laptop = Laptop;
 exports.Layout = Layout;
 exports.LayoutGrid = LayoutGrid;
 exports.LayoutList = LayoutList;
+exports.LazyMotionIcon = LazyMotionIcon;
+exports.LazyMotionPathElement = LazyMotionPathElement;
 exports.Leaf = Leaf;
 exports.Library = Library;
 exports.Lightbulb = Lightbulb;
@@ -12454,11 +14034,23 @@ exports.Zap = Zap;
 exports.animations = animations;
 exports.bounce = bounce;
 exports.cn = cn;
+exports.composeMotionPresets = composeMotionPresets;
+exports.customPresets = customPresets;
+exports.defineMotionPreset = defineMotionPreset;
 exports.draw = draw;
+exports.easeSmooth = easeSmooth;
+exports.extendMotionPreset = extendMotionPreset;
 exports.fade = fade;
+exports.getMotionPreset = getMotionPreset;
 exports.isDefined = isDefined;
+exports.isIconName = isIconName;
+exports.isIconNameKebab = isIconNameKebab;
+exports.isMotionLoaded = isMotionLoaded;
 exports.mergeConfig = mergeConfig;
+exports.motionPresets = motionPresets;
+exports.motionTypeList = motionTypeList;
 exports.pop = pop;
+exports.preloadMotion = preloadMotion;
 exports.pulse = pulse;
 exports.rotate = rotate;
 exports.shake = shake;

@@ -72,6 +72,12 @@ export default function HomePage() {
               Icons
             </Link>
             <Link
+              href="/playground"
+              className="text-sm text-silver hover:text-electric transition-colors"
+            >
+              Playground
+            </Link>
+            <Link
               href="/docs"
               className="text-sm text-silver hover:text-electric transition-colors"
             >
@@ -113,6 +119,13 @@ export default function HomePage() {
                   className="text-sm text-silver hover:text-electric transition-colors py-2"
                 >
                   Icons
+                </Link>
+                <Link
+                  href="/playground"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-sm text-silver hover:text-electric transition-colors py-2"
+                >
+                  Playground
                 </Link>
                 <Link
                   href="/docs"

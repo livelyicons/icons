@@ -2,7 +2,7 @@
  * Core type definitions for the MotionIcons library
  */
 
-import type { Variant, Variants } from 'motion/react';
+import type { Variant, Variants, Transition } from 'motion/react';
 
 /**
  * Available motion/animation types for icons
@@ -26,6 +26,34 @@ export type TriggerType =
   | 'loop'       // Continuous looping animation
   | 'mount'      // Animate once on mount
   | 'inView';    // Animate when scrolled into view
+
+/**
+ * Animation mode for icons
+ */
+export type AnimationMode =
+  | 'motion'     // Use motion/react for animations (default)
+  | 'css'        // Use CSS keyframe animations
+  | 'none';      // No animations (static)
+
+/**
+ * Custom motion preset interface for user-defined animations
+ */
+export interface CustomMotionPresetConfig {
+  /**
+   * Animation variants (initial, hover, tap states)
+   */
+  variants: Variants;
+
+  /**
+   * Transition configuration
+   */
+  transition: Transition;
+
+  /**
+   * Custom preset name
+   */
+  name: string;
+}
 
 /**
  * Props for individual icon components
@@ -69,6 +97,21 @@ export interface IconProps {
    * @default 'hover'
    */
   trigger?: TriggerType;
+
+  /**
+   * Animation mode
+   * - 'motion': Use motion/react (default, requires motion dependency)
+   * - 'css': Use CSS keyframe animations (no JS dependency)
+   * - 'none': Static, no animations
+   * @default 'motion'
+   */
+  animationMode?: AnimationMode;
+
+  /**
+   * Custom motion preset for user-defined animations
+   * When provided, overrides motionType
+   */
+  motionPreset?: CustomMotionPresetConfig;
 
   /**
    * Accessible label for the icon
