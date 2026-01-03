@@ -1,0 +1,12 @@
+{
+  "name": "LivelyIcons",
+  "id": "livelyicons-figma-plugin",
+  "api": "1.0.0",
+  "main": "dist/main.js",
+  "ui": "dist/index.html",
+  "editorType": ["figma"],
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  },
+  "documentAccess": "dynamic-page"
+}

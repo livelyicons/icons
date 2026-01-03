@@ -1,0 +1,29 @@
+{
+  "name": "@motionicon/figma-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "LivelyIcons Figma Plugin - Animated icon browser and inserter",
+  "scripts": {
+    "dev": "npm run build:main && vite build --watch",
+    "build": "npm run build:main && npm run build:ui",
+    "build:main": "esbuild src/main.ts --bundle --outfile=dist/main.js --target=es2017",
+    "build:ui": "vite build",
+    "package": "npm run build && node scripts/package.js"
+  },
+  "dependencies": {
+    "@preact/signals": "^1.3.0",
+    "fuse.js": "^7.0.0",
+    "preact": "^10.24.3"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.101.0",
+    "@preact/preset-vite": "^2.9.3",
+    "@tailwindcss/vite": "^4.0.0-beta.6",
+    "esbuild": "^0.24.0",
+    "tailwindcss": "^4.0.0-beta.6",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vite-plugin-singlefile": "^2.3.0"
+  }
+}
