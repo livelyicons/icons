@@ -114,15 +114,9 @@ export default function VSCodePageClient() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://marketplace.visualstudio.com/items?itemName=livelyicons.livelyicons-picker"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary flex items-center justify-center gap-2"
-                >
-                  <Download size={18} />
-                  Install Extension
-                </a>
+                <span className="btn-primary flex items-center justify-center gap-2 opacity-60 cursor-not-allowed">
+                  Coming Soon
+                </span>
                 <a
                   href="https://github.com/livelyicons/icons"
                   target="_blank"
@@ -451,15 +445,9 @@ export default function VSCodePageClient() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://marketplace.visualstudio.com/items?itemName=livelyicons.livelyicons-picker"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary flex items-center justify-center gap-2"
-                >
-                  <Download size={18} />
-                  Install from Marketplace
-                </a>
+                <span className="btn-primary flex items-center justify-center gap-2 opacity-60 cursor-not-allowed">
+                  Coming Soon
+                </span>
                 <Link
                   href="/plugins/figma"
                   className="btn-secondary flex items-center justify-center gap-2"

@@ -138,19 +138,15 @@ export default function FigmaPageClient() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://www.figma.com/community/plugin/livelyicons"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary flex items-center justify-center gap-2"
+                <span
+                  className="btn-primary flex items-center justify-center gap-2 opacity-60 cursor-not-allowed"
                   style={{
                     background:
                       "linear-gradient(135deg, #a259ff 0%, #ff7262 100%)",
                   }}
                 >
-                  <Download size={18} />
-                  Install Plugin
-                </a>
+                  Coming Soon
+                </span>
                 <a
                   href="https://github.com/livelyicons/icons"
                   target="_blank"
@@ -547,19 +543,15 @@ export default function FigmaPageClient() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://www.figma.com/community/plugin/livelyicons"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary flex items-center justify-center gap-2"
+                <span
+                  className="btn-primary flex items-center justify-center gap-2 opacity-60 cursor-not-allowed"
                   style={{
                     background:
                       "linear-gradient(135deg, #a259ff 0%, #ff7262 100%)",
                   }}
                 >
-                  <Download size={18} />
-                  Install from Figma Community
-                </a>
+                  Coming Soon
+                </span>
                 <Link
                   href="/plugins/vscode"
                   className="btn-secondary flex items-center justify-center gap-2"

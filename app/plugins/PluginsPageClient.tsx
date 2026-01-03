@@ -123,16 +123,12 @@ export default function PluginsPageClient() {
                         Learn More
                         <ArrowRight size={16} />
                       </Link>
-                      <a
-                        href={plugin.installUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 text-sm font-medium text-white transition-colors"
+                      <span
+                        className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 text-sm font-medium text-white opacity-60 cursor-not-allowed"
                         style={{ backgroundColor: plugin.color }}
                       >
-                        <Download size={16} />
-                        Install
-                      </a>
+                        Coming Soon
+                      </span>
                     </div>
                   </div>
                 </motion.div>
