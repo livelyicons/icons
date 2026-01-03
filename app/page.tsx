@@ -152,9 +152,9 @@ export default function HomePage() {
         {/* Background grid */}
         <div className="absolute inset-0 grid-bg opacity-50" />
 
-        {/* Gradient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric/10 rounded-full blur-[120px] animate-pulse-glow" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-plasma/10 rounded-full blur-[120px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
+        {/* Gradient orbs - use max-w to prevent mobile overflow */}
+        <div className="absolute top-1/4 left-1/4 w-64 md:w-96 h-64 md:h-96 bg-electric/10 rounded-full blur-[120px] animate-pulse-glow" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 md:w-96 h-64 md:h-96 bg-plasma/10 rounded-full blur-[120px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
           {/* Badge */}
@@ -256,16 +256,16 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 sm:py-32 relative">
+      <section className="py-16 sm:py-32 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: Features */}
-            <div>
+            <div className="min-w-0">
               <span className="tag mb-4 inline-block">Why MotionIcons</span>
-              <h2 className="font-display text-4xl font-bold text-bone mb-6">
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-bone mb-6">
                 Built for modern React
               </h2>
-              <p className="text-silver mb-12 max-w-lg">
+              <p className="text-silver mb-8 sm:mb-12">
                 Every icon is a fully typed React component with customizable size,
                 stroke width, and animation behavior.
               </p>
@@ -278,13 +278,13 @@ export default function HomePage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
-                    className="group"
+                    className="group min-w-0"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-carbon border border-graphite flex items-center justify-center text-electric group-hover:border-electric/50 transition-colors">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 bg-carbon border border-graphite flex items-center justify-center text-electric group-hover:border-electric/50 transition-colors">
                         {feature.icon}
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <h3 className="font-display font-semibold text-bone mb-1">
                           {feature.title}
                         </h3>

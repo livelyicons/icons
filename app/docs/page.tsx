@@ -399,7 +399,7 @@ const DashboardIcons = dynamic(() => import('./DashboardIcons'))`
   ]
 
   return (
-    <div className="min-h-screen bg-void">
+    <div className="min-h-screen bg-void overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-void/80 backdrop-blur-xl border-b border-graphite">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
@@ -497,7 +497,7 @@ const DashboardIcons = dynamic(() => import('./DashboardIcons'))`
         </AnimatePresence>
       </nav>
 
-      <div className="pt-16 flex">
+      <div className="pt-16 flex overflow-hidden">
         {/* Sidebar */}
         <aside className="hidden lg:block w-64 fixed left-0 top-16 bottom-0 border-r border-graphite overflow-y-auto">
           <nav className="p-6 space-y-1">
@@ -514,7 +514,7 @@ const DashboardIcons = dynamic(() => import('./DashboardIcons'))`
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 lg:ml-64 max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <main className="flex-1 lg:ml-64 w-full max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 min-w-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
