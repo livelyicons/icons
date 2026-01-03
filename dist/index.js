@@ -247,19 +247,30 @@ function useIconAnimation(animated, motionType = "scale", trigger = "hover") {
       initial: { pathLength: 1, opacity: 1 },
       hover: {
         pathLength: [1, 0, 1],
-        opacity: 1
+        opacity: 1,
+        transition: {
+          duration: 1.2,
+          ease: "easeInOut",
+          times: [0, 0.5, 1]
+        }
       }
     };
     const drawInViewVariants = {
       initial: { pathLength: 0, opacity: 0.3 },
-      hover: { pathLength: 1, opacity: 1 }
+      hover: {
+        pathLength: 1,
+        opacity: 1,
+        transition: {
+          duration: 1.5,
+          ease: "easeInOut"
+        }
+      }
     };
     switch (trigger) {
       case "hover":
         return {
           variants: drawVariants,
-          initial: "initial",
-          transition: { duration: 0.8, ease: "easeInOut" }
+          initial: "initial"
         };
       case "loop":
         return {
@@ -281,8 +292,7 @@ function useIconAnimation(animated, motionType = "scale", trigger = "hover") {
       case "inView":
         return {
           variants: drawInViewVariants,
-          initial: "initial",
-          transition: drawTransition
+          initial: "initial"
         };
       default:
         return {};
@@ -2529,6 +2539,9 @@ var Heart = ({
 }) => {
   const { animationProps, pathAnimationProps, drawWrapperProps } = useIconAnimation(animated, motionType, trigger);
   const isDraw = motionType === "draw";
+  const useCssDraw = isDraw && trigger === "hover";
+  const useMotionDraw = isDraw && trigger !== "hover";
+  const drawClass = useCssDraw ? "draw-animation" : "";
   return /* @__PURE__ */ React.createElement(
     react.motion.svg,
     {
@@ -2540,13 +2553,21 @@ var Heart = ({
       strokeWidth,
       strokeLinecap: "round",
       strokeLinejoin: "round",
-      className: `${className || ""} ${isDraw ? "draw-animation" : ""}`.trim(),
-      ...!isDraw ? animationProps : drawWrapperProps,
+      className: `${className || ""} ${drawClass}`.trim(),
+      ...!isDraw ? animationProps : useCssDraw ? drawWrapperProps : {},
       role: ariaLabel ? "img" : void 0,
       "aria-label": ariaLabel,
       "aria-hidden": ariaLabel ? void 0 : true
     },
-    /* @__PURE__ */ React.createElement(react.motion.path, { d: "M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z", ...isDraw ? pathAnimationProps : {}, pathLength: 1, className: isDraw ? "draw-path" : "" })
+    /* @__PURE__ */ React.createElement(
+      react.motion.path,
+      {
+        d: "M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z",
+        pathLength: 1,
+        className: useCssDraw ? "draw-path" : "",
+        ...useMotionDraw ? pathAnimationProps : {}
+      }
+    )
   );
 };
 var HelpCircle = ({
