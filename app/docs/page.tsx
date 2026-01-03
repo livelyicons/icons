@@ -42,6 +42,21 @@ npm install motion-icons
 # or
 yarn add motion-icons`
 
+  const cliCode = `# Search for icons by name (fuzzy matching)
+npx motionicons search arrow
+
+# List all available icons
+npx motionicons list
+
+# Copy import statement to clipboard
+npx motionicons copy heart
+
+# Get detailed info about an icon
+npx motionicons info settings
+
+# Compact list view
+npx motionicons list --compact`
+
   const basicUsageCode = `import { Heart, Loader, Star } from 'motion-icons'
 
 function App() {
@@ -368,6 +383,7 @@ const DashboardIcons = dynamic(() => import('./DashboardIcons'))`
 
   const sections = [
     { id: "installation", label: "Installation" },
+    { id: "cli", label: "CLI Tool" },
     { id: "usage", label: "Basic Usage" },
     { id: "motion-types", label: "Motion Types" },
     { id: "triggers", label: "Trigger Modes" },
@@ -549,10 +565,59 @@ const DashboardIcons = dynamic(() => import('./DashboardIcons'))`
 
           <div className="divider my-12" />
 
+          {/* CLI Tool */}
+          <section id="cli" className="mb-16 scroll-mt-24">
+            <h2 className="font-display text-2xl font-bold text-bone mb-6 flex items-center gap-3">
+              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">2</span>
+              CLI Tool
+            </h2>
+            <p className="text-silver mb-6">
+              Use the CLI to search, explore, and quickly copy icons from your terminal:
+            </p>
+            <CodeBlock code={cliCode} section="cli" />
+
+            <div className="mt-8 grid sm:grid-cols-2 gap-4">
+              <div className="bg-carbon border border-graphite p-4">
+                <h4 className="text-sm font-semibold text-bone mb-2 flex items-center gap-2">
+                  <code className="text-electric">search</code>
+                </h4>
+                <p className="text-xs text-silver">
+                  Fuzzy search icons by name. Partial matches work (e.g., &quot;arr&quot; finds &quot;arrow&quot;)
+                </p>
+              </div>
+              <div className="bg-carbon border border-graphite p-4">
+                <h4 className="text-sm font-semibold text-bone mb-2 flex items-center gap-2">
+                  <code className="text-electric">list</code>
+                </h4>
+                <p className="text-xs text-silver">
+                  List all 350+ icons. Use <code className="text-electric">--compact</code> for condensed output
+                </p>
+              </div>
+              <div className="bg-carbon border border-graphite p-4">
+                <h4 className="text-sm font-semibold text-bone mb-2 flex items-center gap-2">
+                  <code className="text-electric">copy</code>
+                </h4>
+                <p className="text-xs text-silver">
+                  Copy import statement directly to clipboard. Supports kebab-case or PascalCase
+                </p>
+              </div>
+              <div className="bg-carbon border border-graphite p-4">
+                <h4 className="text-sm font-semibold text-bone mb-2 flex items-center gap-2">
+                  <code className="text-electric">info</code>
+                </h4>
+                <p className="text-xs text-silver">
+                  Get detailed information about a specific icon including file location
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <div className="divider my-12" />
+
           {/* Basic Usage */}
           <section id="usage" className="mb-16 scroll-mt-24">
             <h2 className="font-display text-2xl font-bold text-bone mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">2</span>
+              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">3</span>
               Basic Usage
             </h2>
             <p className="text-silver mb-6">
@@ -592,7 +657,7 @@ const DashboardIcons = dynamic(() => import('./DashboardIcons'))`
           {/* Motion Types */}
           <section id="motion-types" className="mb-16 scroll-mt-24">
             <h2 className="font-display text-2xl font-bold text-bone mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">3</span>
+              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">4</span>
               Motion Types
             </h2>
             <p className="text-silver mb-6">
@@ -637,7 +702,7 @@ const DashboardIcons = dynamic(() => import('./DashboardIcons'))`
           {/* Trigger Modes */}
           <section id="triggers" className="mb-16 scroll-mt-24">
             <h2 className="font-display text-2xl font-bold text-bone mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">4</span>
+              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">5</span>
               Trigger Modes
             </h2>
             <p className="text-silver mb-6">
@@ -673,7 +738,7 @@ const DashboardIcons = dynamic(() => import('./DashboardIcons'))`
           {/* Animation Control */}
           <section id="animation" className="mb-16 scroll-mt-24">
             <h2 className="font-display text-2xl font-bold text-bone mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">5</span>
+              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">6</span>
               Animation Control
             </h2>
             <p className="text-silver mb-6">
@@ -702,7 +767,7 @@ const DashboardIcons = dynamic(() => import('./DashboardIcons'))`
           {/* Accessibility */}
           <section id="accessibility" className="mb-16 scroll-mt-24">
             <h2 className="font-display text-2xl font-bold text-bone mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">6</span>
+              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">7</span>
               Accessibility
             </h2>
             <p className="text-silver mb-6">
@@ -737,7 +802,7 @@ const DashboardIcons = dynamic(() => import('./DashboardIcons'))`
           {/* API Reference */}
           <section id="api" className="mb-16 scroll-mt-24">
             <h2 className="font-display text-2xl font-bold text-bone mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">7</span>
+              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">8</span>
               API Reference
             </h2>
 
@@ -854,7 +919,7 @@ const DashboardIcons = dynamic(() => import('./DashboardIcons'))`
           {/* Migration Guide */}
           <section id="migration" className="mb-16 scroll-mt-24">
             <h2 className="font-display text-2xl font-bold text-bone mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">8</span>
+              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">9</span>
               Migration Guide
             </h2>
             <p className="text-silver mb-6">
@@ -1003,7 +1068,7 @@ const DashboardIcons = dynamic(() => import('./DashboardIcons'))`
           {/* Framework Examples */}
           <section id="frameworks" className="mb-16 scroll-mt-24">
             <h2 className="font-display text-2xl font-bold text-bone mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">9</span>
+              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">10</span>
               Framework Examples
             </h2>
             <p className="text-silver mb-6">
@@ -1097,7 +1162,7 @@ const DashboardIcons = dynamic(() => import('./DashboardIcons'))`
           {/* Performance Best Practices */}
           <section id="performance" className="mb-16 scroll-mt-24">
             <h2 className="font-display text-2xl font-bold text-bone mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">10</span>
+              <span className="w-8 h-8 bg-graphite flex items-center justify-center text-sm text-electric">11</span>
               Performance Best Practices
             </h2>
             <p className="text-silver mb-6">
