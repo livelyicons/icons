@@ -74,7 +74,7 @@ export function LogoWithText({ iconSize = 32 }: { iconSize?: number }) {
     <div className="flex items-center gap-3">
       <LogoMark size={iconSize} />
       <span className="font-display font-bold text-lg">
-        <span className="bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 bg-clip-text text-transparent">
+        <span className="text-leaf-bright">
           Lively
         </span>
         <span className="text-bone">Icons</span>
