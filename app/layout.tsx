@@ -53,7 +53,7 @@ export const metadata: Metadata = {
       "1300+ animated SVG icons for React. Built-in hover animations, 9 motion types, tree-shakeable, TypeScript-first. The only icon library with built-in animations.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/social/169.jpeg",
         width: 1200,
         height: 630,
         alt: "LivelyIcons - Animated React Icon Library",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title: "LivelyIcons — Animated React Icon Library",
     description:
       "1300+ animated SVG icons for React. Built-in hover animations, 9 motion types, tree-shakeable, TypeScript-first.",
-    images: ["/og-image.png"],
+    images: ["/social/169.jpeg"],
   },
   robots: {
     index: true,
