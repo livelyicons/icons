@@ -56,6 +56,31 @@ export function suggestAnimation(prompt: string): string {
 }
 
 /**
+ * Build a refinement prompt that modifies an existing icon.
+ * Combines the original generation context with the user's refinement instruction.
+ */
+export function buildRefinementPrompt(
+  originalPrompt: string,
+  instruction: string,
+  style: IconStyle,
+): string {
+  const styleDirectives = STYLE_DIRECTIVES[style];
+  return [
+    `Refine this existing icon. Original description: ${originalPrompt}.`,
+    `Refinement instruction: ${instruction}.`,
+    styleDirectives,
+    'Requirements:',
+    '- Keep the same overall concept and recognizability',
+    '- Apply the refinement instruction while maintaining icon quality',
+    '- Simple, clean vector icon suitable for UI/web use',
+    '- Single color (currentColor), no gradients unless duotone style',
+    '- Centered in a square viewBox',
+    '- Maximum 20 paths, minimal complexity',
+    '- No text, no background, no border',
+  ].join('\n');
+}
+
+/**
  * Suggest a trigger based on the icon context.
  */
 export function suggestTrigger(prompt: string): string {

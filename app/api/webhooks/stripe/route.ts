@@ -6,11 +6,12 @@ import {
   downgradeToFree,
 } from '@/lib/subscription';
 import { refreshMonthlyTokens, creditTopUpTokens } from '@/lib/tokens';
-import { db, subscriptions } from '@/db';
+import { db, subscriptions, teams, teamMembers } from '@/db';
 import { eq } from 'drizzle-orm';
 import { sendEmail, getUserEmailInfo } from '@/lib/email';
 import { UpgradeConfirmation } from '@/email/templates/UpgradeConfirmation';
 import { CancellationConfirmation } from '@/email/templates/CancellationConfirmation';
+import { MemberRemoved } from '@/emails/MemberRemoved';
 import { inngest } from '@/lib/inngest';
 import type { PlanType } from '@/db/schema';
 import type Stripe from 'stripe';
@@ -190,6 +191,8 @@ async function handleSubscriptionDeleted(stripeSub: Stripe.Subscription) {
   const sub = await findSubscriptionByStripeCustomer(customerId);
   if (!sub) return;
 
+  const wasteamPlan = sub.planType === 'team' || sub.planType === 'enterprise';
+
   await downgradeToFree(sub.clerkUserId);
 
   // Send cancellation confirmation email (best-effort)
@@ -214,6 +217,46 @@ async function handleSubscriptionDeleted(stripeSub: Stripe.Subscription) {
     }
   } catch (emailErr) {
     console.error('[stripe-webhook] Failed to send cancellation email:', emailErr);
+  }
+
+  // Notify team members when a team plan is canceled
+  if (wasteamPlan) {
+    try {
+      const ownerTeams = await db
+        .select({ id: teams.id, name: teams.name })
+        .from(teams)
+        .where(eq(teams.ownerClerkUserId, sub.clerkUserId));
+
+      for (const team of ownerTeams) {
+        const members = await db
+          .select({ clerkUserId: teamMembers.clerkUserId })
+          .from(teamMembers)
+          .where(eq(teamMembers.teamId, team.id));
+
+        for (const member of members) {
+          if (member.clerkUserId === sub.clerkUserId) continue;
+          try {
+            const memberInfo = await getUserEmailInfo(member.clerkUserId);
+            if (memberInfo) {
+              await sendEmail(
+                memberInfo.email,
+                `Team ${team.name} subscription canceled`,
+                MemberRemoved,
+                {
+                  userName: memberInfo.name,
+                  teamName: team.name,
+                  removedBy: 'the team owner (subscription canceled)',
+                },
+              );
+            }
+          } catch {
+            // Best-effort notification
+          }
+        }
+      }
+    } catch (teamErr) {
+      console.error('[stripe-webhook] Failed to notify team members:', teamErr);
+    }
   }
 }
 

@@ -60,7 +60,7 @@ const PLANS = [
       'CDN-hosted icons (500)',
       'Priority support',
     ],
-    cta: 'Start Team Trial',
+    cta: 'Start Team Plan',
     highlighted: false,
     priceIdKey: {
       monthly: 'NEXT_PUBLIC_STRIPE_TEAM_MONTHLY_PRICE_ID',

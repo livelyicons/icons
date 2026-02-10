@@ -92,6 +92,73 @@ function mapStyleToSubstyle(style: string): string | undefined {
   return mapping[style];
 }
 
+/**
+ * Generate a refined SVG icon by sending a modified prompt to Recraft V3.
+ * Uses the same generation endpoint but with a refinement-oriented prompt.
+ */
+export async function refineIcon(
+  params: RecraftGenerateParams,
+): Promise<string> {
+  return generateSvgWithRecraft(params);
+}
+
+/**
+ * Generate an SVG icon using an uploaded reference image as a seed.
+ * The reference image URL is passed to Recraft to guide generation.
+ */
+export async function generateFromReference(params: {
+  prompt: string;
+  style: string;
+  referenceImageUrl: string;
+}): Promise<string> {
+  const env = serverEnv();
+
+  const response = await fetch(`${RECRAFT_API_URL}/images/generations`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${env.RECRAFT_API_KEY}`,
+    },
+    body: JSON.stringify({
+      prompt: params.prompt,
+      style: 'icon',
+      substyle: mapStyleToSubstyle(params.style),
+      model: 'recraftv3',
+      response_format: 'svg',
+      size: '1024x1024',
+      image_url: params.referenceImageUrl,
+    }),
+  });
+
+  if (!response.ok) {
+    const errorBody = await response.text().catch(() => 'Unknown error');
+    throw new RecraftApiError(
+      `Recraft API error (${response.status}): ${errorBody}`,
+      response.status,
+    );
+  }
+
+  const data: RecraftResponse = await response.json();
+  const result = data.data?.[0];
+  if (!result) {
+    throw new RecraftApiError('No result returned from Recraft API', 500);
+  }
+
+  if (result.svg) return result.svg;
+  if (result.url) {
+    const svgResponse = await fetch(result.url);
+    if (!svgResponse.ok) {
+      throw new RecraftApiError('Failed to fetch SVG from Recraft URL', 500);
+    }
+    return svgResponse.text();
+  }
+  if (result.b64_json) {
+    return Buffer.from(result.b64_json, 'base64').toString('utf-8');
+  }
+
+  throw new RecraftApiError('Unexpected response format from Recraft API', 500);
+}
+
 export class RecraftApiError extends Error {
   constructor(
     message: string,

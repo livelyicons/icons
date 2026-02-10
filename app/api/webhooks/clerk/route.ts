@@ -1,10 +1,10 @@
 import { Webhook } from 'svix';
 import { headers } from 'next/headers';
-import { eq } from 'drizzle-orm';
+import { eq, and } from 'drizzle-orm';
 import { NextResponse } from 'next/server';
 import { getStripe } from '@/lib/stripe';
 import { createFreeSubscription, getSubscription } from '@/lib/subscription';
-import { db, subscriptions } from '@/db';
+import { db, subscriptions, teamInvitations, teamMembers } from '@/db';
 import { sendEmail } from '@/lib/email';
 import { Welcome } from '@/email/templates/Welcome';
 
@@ -90,6 +90,36 @@ export async function POST(req: Request) {
             });
           } catch (emailErr) {
             console.error('[clerk-webhook] Failed to send welcome email:', emailErr);
+          }
+
+          // Auto-accept pending team invitations matching this email
+          try {
+            const pendingInvitations = await db
+              .select()
+              .from(teamInvitations)
+              .where(
+                and(
+                  eq(teamInvitations.email, email.toLowerCase()),
+                  eq(teamInvitations.status, 'pending'),
+                ),
+              );
+
+            for (const invitation of pendingInvitations) {
+              if (new Date() > invitation.expiresAt) continue;
+
+              await db.insert(teamMembers).values({
+                teamId: invitation.teamId,
+                clerkUserId,
+                role: invitation.role,
+              });
+
+              await db
+                .update(teamInvitations)
+                .set({ status: 'accepted', acceptedAt: new Date() })
+                .where(eq(teamInvitations.id, invitation.id));
+            }
+          } catch (inviteErr) {
+            console.error('[clerk-webhook] Failed to auto-accept invitations:', inviteErr);
           }
         }
         break;

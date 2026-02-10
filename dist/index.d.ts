@@ -11,7 +11,7 @@ export { IconPathData, StaticAlertCircle, StaticArrowLeft, StaticArrowRight, Sta
 /**
  * Available motion/animation types for icons
  */
-type MotionType = 'scale' | 'rotate' | 'translate' | 'shake' | 'pulse' | 'bounce' | 'draw' | 'spin' | 'none';
+type MotionType = 'scale' | 'rotate' | 'translate' | 'shake' | 'pulse' | 'bounce' | 'draw' | 'spin' | 'ring' | 'wiggle' | 'heartbeat' | 'swing' | 'float' | 'none';
 /**
  * Animation trigger modes
  */

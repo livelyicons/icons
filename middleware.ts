@@ -9,6 +9,10 @@ const isPublicRoute = createRouteMatcher([
   '/bundle-size',
   '/plugins(.*)',
   '/api/webhooks/(.*)',
+  '/invite/(.*)',
+  '/shared/(.*)',
+  '/api/shared/(.*)',
+  '/api/invitations/(.*)',
 ]);
 
 export default clerkMiddleware(async (auth, request) => {
