@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -171,7 +172,9 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="noise-bg">
-        {children}
+        <ClerkProvider>
+          {children}
+        </ClerkProvider>
         <Analytics />
       </body>
     </html>

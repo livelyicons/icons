@@ -1,7 +1,7 @@
 'use strict';
 
 var chunkT7ULO2WW_js = require('./chunk-T7ULO2WW.js');
-var chunkKTPJ3FXL_js = require('./chunk-KTPJ3FXL.js');
+var chunkWYMNSSXF_js = require('./chunk-WYMNSSXF.js');
 var chunkDGUM43GV_js = require('./chunk-DGUM43GV.js');
 var React3 = require('react');
 var react = require('motion/react');
@@ -139,6 +139,58 @@ var motionPresets = {
       repeat: Infinity
     }
   },
+  ring: {
+    variants: {
+      initial: { rotate: 0 },
+      hover: { rotate: [0, 14, -12, 8, -6, 3, 0] }
+    },
+    transition: {
+      duration: 0.6,
+      ease: [0.36, 0, 0.66, 1]
+    }
+  },
+  wiggle: {
+    variants: {
+      initial: { rotate: 0 },
+      hover: { rotate: [0, -12, 12, -8, 8, -4, 4, 0] }
+    },
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  },
+  heartbeat: {
+    variants: {
+      initial: { scale: 1 },
+      hover: { scale: [1, 1.15, 1, 1.1, 1] }
+    },
+    transition: {
+      duration: 0.8,
+      ease: "easeInOut",
+      times: [0, 0.14, 0.28, 0.42, 1]
+    }
+  },
+  swing: {
+    variants: {
+      initial: { rotate: 0 },
+      hover: { rotate: [0, 15, -10, 5, -5, 0] }
+    },
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  },
+  float: {
+    variants: {
+      initial: { y: 0 },
+      hover: { y: [0, -8, 0] }
+    },
+    transition: {
+      duration: 1.5,
+      ease: "easeInOut",
+      repeat: Infinity
+    }
+  },
   none: {
     variants: {
       initial: {},
@@ -159,6 +211,11 @@ var motionTypeList = [
   { type: "bounce", label: "Bounce", description: "Bouncy spring" },
   { type: "draw", label: "Draw", description: "Fade reveal" },
   { type: "spin", label: "Spin", description: "Continuous rotation" },
+  { type: "ring", label: "Ring", description: "Bell swing" },
+  { type: "wiggle", label: "Wiggle", description: "Playful wiggle" },
+  { type: "heartbeat", label: "Heartbeat", description: "Double pulse" },
+  { type: "swing", label: "Swing", description: "Pendulum swing" },
+  { type: "float", label: "Float", description: "Gentle hover" },
   { type: "none", label: "None", description: "No animation" }
 ];
 
@@ -50422,35 +50479,35 @@ Object.defineProperty(exports, "withStatic", {
 });
 Object.defineProperty(exports, "cssAnimationClasses", {
   enumerable: true,
-  get: function () { return chunkKTPJ3FXL_js.cssAnimationClasses; }
+  get: function () { return chunkWYMNSSXF_js.cssAnimationClasses; }
 });
 Object.defineProperty(exports, "cssKeyframes", {
   enumerable: true,
-  get: function () { return chunkKTPJ3FXL_js.cssKeyframes; }
+  get: function () { return chunkWYMNSSXF_js.cssKeyframes; }
 });
 Object.defineProperty(exports, "cssStylesheet", {
   enumerable: true,
-  get: function () { return chunkKTPJ3FXL_js.cssStylesheet; }
+  get: function () { return chunkWYMNSSXF_js.cssStylesheet; }
 });
 Object.defineProperty(exports, "getCssAnimationClasses", {
   enumerable: true,
-  get: function () { return chunkKTPJ3FXL_js.getCssAnimationClasses; }
+  get: function () { return chunkWYMNSSXF_js.getCssAnimationClasses; }
 });
 Object.defineProperty(exports, "injectCssAnimations", {
   enumerable: true,
-  get: function () { return chunkKTPJ3FXL_js.injectCssAnimations; }
+  get: function () { return chunkWYMNSSXF_js.injectCssAnimations; }
 });
 Object.defineProperty(exports, "motionTypeToCssClass", {
   enumerable: true,
-  get: function () { return chunkKTPJ3FXL_js.motionTypeToCssClass; }
+  get: function () { return chunkWYMNSSXF_js.motionTypeToCssClass; }
 });
 Object.defineProperty(exports, "removeCssAnimations", {
   enumerable: true,
-  get: function () { return chunkKTPJ3FXL_js.removeCssAnimations; }
+  get: function () { return chunkWYMNSSXF_js.removeCssAnimations; }
 });
 Object.defineProperty(exports, "triggerTypeToCssClass", {
   enumerable: true,
-  get: function () { return chunkKTPJ3FXL_js.triggerTypeToCssClass; }
+  get: function () { return chunkWYMNSSXF_js.triggerTypeToCssClass; }
 });
 exports.AbTest = AbTest;
 exports.Accessibility = Accessibility;

@@ -1,5 +1,5 @@
 export { StaticAlertCircle, StaticArrowLeft, StaticArrowRight, StaticBell, StaticCalendar, StaticCheck, StaticCheckCircle, StaticChevronDown, StaticChevronUp, StaticClock, StaticCopy, StaticDownload, StaticEdit, StaticEye, StaticEyeOff, StaticHeart, StaticHelpCircle, StaticHome, StaticInfo, StaticLoader, StaticLock, StaticMail, StaticMenu, StaticMessageCircle, StaticMinus, StaticPhone, StaticPlus, StaticRefresh, StaticSearch, StaticSettings, StaticShare, StaticStar, StaticThumbsDown, StaticThumbsUp, StaticTrash, StaticUpload, StaticUser, StaticUsers, StaticX, StaticXCircle, createStaticIcon, withStatic } from './chunk-FZN7GKKV.mjs';
-export { cssAnimationClasses, cssKeyframes, cssStylesheet, getCssAnimationClasses, injectCssAnimations, motionTypeToCssClass, removeCssAnimations, triggerTypeToCssClass } from './chunk-PLCTGVWN.mjs';
+export { cssAnimationClasses, cssKeyframes, cssStylesheet, getCssAnimationClasses, injectCssAnimations, motionTypeToCssClass, removeCssAnimations, triggerTypeToCssClass } from './chunk-5L5OZCRA.mjs';
 import { __require } from './chunk-BJTO5JO5.mjs';
 import * as React3 from 'react';
 import React3__default, { createContext, lazy, forwardRef, useContext, Suspense } from 'react';
@@ -118,6 +118,58 @@ var motionPresets = {
       repeat: Infinity
     }
   },
+  ring: {
+    variants: {
+      initial: { rotate: 0 },
+      hover: { rotate: [0, 14, -12, 8, -6, 3, 0] }
+    },
+    transition: {
+      duration: 0.6,
+      ease: [0.36, 0, 0.66, 1]
+    }
+  },
+  wiggle: {
+    variants: {
+      initial: { rotate: 0 },
+      hover: { rotate: [0, -12, 12, -8, 8, -4, 4, 0] }
+    },
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  },
+  heartbeat: {
+    variants: {
+      initial: { scale: 1 },
+      hover: { scale: [1, 1.15, 1, 1.1, 1] }
+    },
+    transition: {
+      duration: 0.8,
+      ease: "easeInOut",
+      times: [0, 0.14, 0.28, 0.42, 1]
+    }
+  },
+  swing: {
+    variants: {
+      initial: { rotate: 0 },
+      hover: { rotate: [0, 15, -10, 5, -5, 0] }
+    },
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  },
+  float: {
+    variants: {
+      initial: { y: 0 },
+      hover: { y: [0, -8, 0] }
+    },
+    transition: {
+      duration: 1.5,
+      ease: "easeInOut",
+      repeat: Infinity
+    }
+  },
   none: {
     variants: {
       initial: {},
@@ -138,6 +190,11 @@ var motionTypeList = [
   { type: "bounce", label: "Bounce", description: "Bouncy spring" },
   { type: "draw", label: "Draw", description: "Fade reveal" },
   { type: "spin", label: "Spin", description: "Continuous rotation" },
+  { type: "ring", label: "Ring", description: "Bell swing" },
+  { type: "wiggle", label: "Wiggle", description: "Playful wiggle" },
+  { type: "heartbeat", label: "Heartbeat", description: "Double pulse" },
+  { type: "swing", label: "Swing", description: "Pendulum swing" },
+  { type: "float", label: "Float", description: "Gentle hover" },
   { type: "none", label: "None", description: "No animation" }
 ];
 

@@ -2,8 +2,12 @@
   "name": "livelyicons-picker",
   "displayName": "LivelyIcons Picker",
   "description": "Browse, preview, and insert animated icons from the LivelyIcons library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "livelyicons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/livelyicons/livelyicons"
+  },
   "icon": "icon.png",
   "engines": { "vscode": "^1.74.0" },
   "categories": ["Snippets", "Other"],

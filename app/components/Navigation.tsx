@@ -88,6 +88,14 @@ export function Navigation() {
           </div>
 
           <Link
+            href="/team"
+            className={`text-sm transition-colors ${
+              pathname.startsWith('/team') ? 'text-electric' : 'text-silver hover:text-electric'
+            }`}
+          >
+            Team
+          </Link>
+          <Link
             href="/compare"
             className={`text-sm transition-colors ${
               isActive('/compare') ? 'text-electric' : 'text-silver hover:text-electric'
@@ -174,6 +182,15 @@ export function Navigation() {
                 Figma
               </Link>
 
+              <Link
+                href="/team"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`text-sm py-2 transition-colors ${
+                  pathname.startsWith('/team') ? 'text-electric' : 'text-silver hover:text-electric'
+                }`}
+              >
+                Team
+              </Link>
               <Link
                 href="/compare"
                 onClick={() => setMobileMenuOpen(false)}
